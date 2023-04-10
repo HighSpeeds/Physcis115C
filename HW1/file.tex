@@ -1,0 +1,398 @@
+\documentclass[11pt]{article}
+\author{Lawrence Liu}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,stmaryrd}
+\usepackage{physics}
+\usepackage{pdfpages}
+\newcommand{\Laplace}{\mathscr{L}}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{amssymb}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}}
+\lstset{style=mystyle}
+\title{Physics 115C HW1}
+\begin{document}
+\maketitle
+\section{Problem 1}
+\subsection*{(a)}
+We have that 
+$$\vec{v_1}\vec{v_1}^T=
+\begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0
+\end{bmatrix}$$
+And:
+$$\vec{v_2}\vec{v_2}^T=
+\begin{bmatrix}
+    0 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 0
+\end{bmatrix}$$
+And:
+$$\vec{v_3}\vec{v_3}^T=
+\begin{bmatrix}
+    0 & 0 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & 1
+\end{bmatrix}$$
+Therefore we have that 
+$$\sum_{n} \vec{v_n}\vec{v_n}^T= \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{bmatrix}=\mathbf{1}_3$$
+\subsection*{(b)}
+We have that $\ket{\uparrow_x}=\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+    1 \\
+    1
+\end{bmatrix}$ and $\ket{\downarrow_x}=\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+    1 \\
+    -1
+\end{bmatrix}$, therefore we have that 
+$$\ket{\uparrow_x}\bra{\uparrow_x}=\frac{1}{2}
+\begin{bmatrix}
+    1 & 1 \\
+    1 & 1
+\end{bmatrix}$$
+And:
+$$\ket{\downarrow_x}\bra{\downarrow_x}=\frac{1}{2}
+\begin{bmatrix}
+    1 & -1 \\
+    -1 & 1
+\end{bmatrix}$$
+Therefore we have that
+$$\sum_{n=\uparrow_x,\downarrow_x} \ket{n}\bra{n}=
+\begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+\end{bmatrix}=\mathbf{1}_2$$
+\subsection*{(c)}
+We have that $\ket{\uparrow_y}=\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+    1 \\
+    i
+\end{bmatrix}$
+and $\ket{\downarrow_y}=\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+    1 \\
+    -i
+\end{bmatrix}$, therefore we have that
+$$\ket{\uparrow_y}\bra{\uparrow_y}=\frac{1}{2}
+\begin{bmatrix}
+    1\\
+    i
+\end{bmatrix}
+\begin{bmatrix}
+    1 & -i
+\end{bmatrix}=
+\frac{1}{2}\begin{bmatrix}
+    1 & -i \\
+    i & 1
+\end{bmatrix}$$
+And:
+$$\ket{\downarrow_y}\bra{\downarrow_y}=\frac{1}{2}
+\begin{bmatrix}
+    1\\
+    -i
+\end{bmatrix}
+\begin{bmatrix}
+    1 & i
+\end{bmatrix}=
+\frac{1}{2}\begin{bmatrix}
+    1 & i \\
+    -i & 1
+\end{bmatrix}$$
+Therefore we have that
+$$\sum_{n=\uparrow_y,\downarrow_y} \ket{n}\bra{n}=
+\begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+\end{bmatrix}=\mathbf{1}_2$$
+\subsection*{(d)}
+We have that 
+$$\ket{\uparrow_z}=\frac{1}{\sqrt{2}}\ket{\uparrow_y}
++\frac{1}{\sqrt{2}}\ket{\downarrow_y}$$
+Since $\ket{\uparrow_y}$ is 
+orthogonal to $\ket{\downarrow_y}$, we have that 
+$\bra{\uparrow_y}\ket{\downarrow_y}=\bra{\downarrow_y}\ket{\uparrow_y}=0$.
+Therefore we have that
+$$\left(
+    \ket{\uparrow_y}\bra{\uparrow_y}
+    +\ket{\downarrow_y}\bra{\downarrow_y}
+\right)
+\ket{\uparrow_z}=
+\frac{1}{\sqrt{2}}\ket{\uparrow_y}+
+\frac{1}{\sqrt{2}}\ket{\downarrow_y}$$
+This state is a superposition of 
+$\ket{\uparrow_y}$ and $\ket{\downarrow_y}$, with probability 
+$\frac{1}{2}$ for each. 
+\subsection*{(e)}
+We have that for a $n$ euclidean vectors $\ket{v_1},\ket{v_2},\ldots,\ket{v_n}$,
+that span a space, we have that any $\ket{\psi}$, can we written 
+as:
+$$\ket{\psi}=\sum_{i=1}^N \ket{v_i}\bra{v_i}\ket{\psi}$$
+Since $\sum_{i=1}^N \ket{v_i}\bra{v_i}= \mathbf{1}_n$, therefore 
+$$\ket{\psi}=\mathbf{1}_n \ket{\psi}=\sum_{i=1}^N \ket{v_i}\bra{v_i}\ket{\psi}$$
+If we generalize this to an infinite dimension Hilbert space, 
+with continous variable $x$, we have that
+$$\mathbf{1}= \int_{-\infty}^{\infty} dx\ket{x}\bra{x}$$
+Therefore we have that 
+$$\ket{\psi}=\mathbf{1}\ket{\psi}=\int_{-\infty}^{\infty} dx\ket{x}\bra{x}\ket{\psi}$$
+$$\ket{\psi}=\int_{-\infty}^{\infty} dx\ket{x}\psi(x)$$
+And 
+$$\ket{\phi} = \int_{-\infty}^{\infty} dx\ket{x}\phi(x)$$
+And thus 
+$$\bra{\psi}\ket{\phi}=\int_{-\infty}^{\infty} \psi^{*}(x)\phi(x)dx$$
+\section*{Problem 2}
+TODO
+\section*{Problem 3}
+\subsection*{(a)}
+We have that 
+$$a_{+}\ket{n} = \sqrt{n+1}\ket{n+1}$$
+$$a_{-}\ket{n} = \sqrt{n}\ket{n-1}$$
+Therefore 
+$$\bra{m}a_{+}\ket{n}= \sqrt{n+1}\bra{m}\ket{n+1}=
+\sqrt{n+1}\delta_{m,n+1}$$
+And
+$$\bra{m}a_{-}\ket{n}= \sqrt{n}\bra{m}\ket{n-1}=
+\sqrt{n}\delta_{m,n-1}$$
+Therefore 
+$$\bra{m}a_{+}\ket{n}
+=\begin{bmatrix}
+    0 & 0 & 0 & 0 & 0 & \cdots \\
+    \sqrt{1} & 0 & 0 & 0 & 0 & \cdots \\
+    0 & \sqrt{2} & 0 & 0 & 0 & \cdots \\
+    0 & 0 & \sqrt{3} & 0 & 0 & \cdots \\
+    0 & 0 & 0 & \sqrt{4} & 0 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}$$
+and:
+$$\bra{m}a_{-}\ket{n}
+=\begin{bmatrix}
+    0 & \sqrt{1} & 0 & 0 & 0 & \cdots \\
+    0 & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & 0 & 0 & \sqrt{3} & 0 & \cdots \\
+    0 & 0 & 0 & 0 & \sqrt{4} & \cdots \\
+    0 & 0 & 0 & 0 & 0 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}$$
+\subsection*{(b)}
+We have that 
+$$\hat{x}=\sqrt{\frac{\hbar}{2m\omega}}\left(
+    a_{+}+a_{-}
+\right)$$
+$$\hat{p}=i\sqrt{\frac{\hbar m\omega}{2}}\left(
+    a_{+}-a_{-}
+\right)$$
+Therefore we have that 
+$$
+\bra{m}\hat{x}\ket{n}=
+\sqrt{\frac{\hbar}{2m\omega}}\left(
+    \sqrt{n+1}\delta_{m,n+1}+\sqrt{n}\delta_{m,n-1}
+\right)$$
+$$\bra{m}\hat{x}\ket{n}=\sqrt{\frac{\hbar}{2m\omega}}
+\begin{bmatrix}
+    0 & \sqrt{1} & 0 & 0 & 0 & \cdots \\
+    \sqrt{1} & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & \sqrt{2} & 0 & \sqrt{3} & 0 & \cdots \\
+    0 & 0 & \sqrt{3} & 0 & \sqrt{4} & \cdots \\
+    0 & 0 & 0 & \sqrt{4} & 0 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}$$
+And:
+$$
+\bra{m}\hat{p}\ket{n}=
+i\sqrt{\frac{\hbar m\omega}{2}}\left(
+    \sqrt{n+1}\delta_{m,n+1}-\sqrt{n}\delta_{m,n-1}
+\right)$$
+$$
+\bra{m}\hat{p}\ket{n}=
+i\sqrt{\frac{\hbar m\omega}{2}}
+\begin{bmatrix}
+    0 & -\sqrt{1} & 0 & 0 & 0 & \cdots \\
+    \sqrt{1} & 0 & -\sqrt{2} & 0 & 0 & \cdots \\
+    0 & \sqrt{2} & 0 & -\sqrt{3} & 0 & \cdots \\
+    0 & 0 & \sqrt{3} & 0 & -\sqrt{4} & \cdots \\
+    0 & 0 & 0 & \sqrt{4} & 0 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}$$
+These matrices are hermitian since $\bra{m}\hat{x}\ket{n}$ is real
+and symmetric, and 
+since $\bra{m}\hat{p}\ket{n}$ is purely imaginary and
+skew-symmetric.
+\subsection*{(c)}
+We have that 
+$$\hat{x}^2=\frac{\hbar}{2m\omega}\left(
+    a_{+}^2+a_{-}^2+a_{+}a_{-}+ a_{-}a_{+}
+\right)$$
+Thus:
+$$\hat{x}^2\ket{n}=
+\frac{\hbar}{2m\omega}\left(
+    \sqrt{(n+1)(n+2)}\ket{n+2}+\sqrt{n(n-1)}\ket{n-2}
+    +(n+1)\ket{n}+n\ket{n}
+\right)$$
+Therefore 
+$$\bra{m}\hat{x}^2\ket{n}=
+\frac{\hbar}{2m\omega}\left(
+    \sqrt{(n+1)(n+2)}\delta_{m,n+2}+\sqrt{n(n-1)}\delta_{m,n-2}
+    +(n+1)\delta_{m,n}+n\delta_{m,n}
+\right)$$
+$$\bra{m}\hat{x}^2\ket{n}=
+\frac{\hbar}{2m\omega}
+\begin{bmatrix}
+    1 & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & 3 & 0 & \sqrt{6} & 0 & \cdots \\
+    \sqrt{2} & 0 & 5 & 0 & \sqrt{10} & \cdots \\
+    0 & \sqrt{6} & 0 & 7 & 0 & \cdots \\
+    0 & 0 & \sqrt{10} & 0 & 9 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
+$$
+Likewise we have that:
+$$\hat{p}^2=
+\frac{\hbar m\omega}{2}\left(
+    a_{+}^2+a_{-}^2-a_{+}a_{-}- a_{-}a_{+}  
+\right)$$
+$$\hat{p}^2\ket{n}=
+\frac{\hbar m\omega}{2}\left(
+    \sqrt{(n+1)(n+2)}\ket{n+2}-\sqrt{n(n-1)}\ket{n-2}
+    -(n+1)\ket{n}-n\ket{n}  
+\right)$$
+$$\bra{m}\hat{p}^2\ket{n}=
+-\frac{\hbar m\omega}{2}\left(
+    \sqrt{(n+1)(n+2)}\delta_{m,n+2}-\sqrt{n(n-1)}\delta_{m,n-2}
+    -(n+1)\delta_{m,n}-n\delta_{m,n}
+\right)$$
+$$\bra{m}\hat{p}^2\ket{n}=
+-\frac{\hbar m\omega}{2}
+\begin{bmatrix}
+    -1 & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & -3 & 0 & \sqrt{6} & 0 & \cdots \\
+    \sqrt{2} & 0 & -5 & 0 & \sqrt{10} & \cdots \\
+    0 & \sqrt{6} & 0 & -7 & 0 & \cdots \\
+    0 & 0 & \sqrt{10} & 0 & -9 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}$$
+These matrices are hermitian since they are 
+real and symmetric.
+\subsection*{(d)}
+We have that 
+$$H=\hbar\omega \left(
+    a_{+}a_{-}+\frac{1}{2}
+\right)$$
+Therefore we have that 
+$$\bra{m}\hat{H}\ket{n}=
+\hbar\omega\left(
+    \bra{m}a_{+}a_{-}\ket{n}+\frac{1}{2}\delta_{m,n}\right)
+    $$
+From part (a) we have that:
+$$\bra{m}a_{+}a_{-}\ket{n}=\begin{bmatrix}
+    0 & 0 & 0 & 0 & 0 & \cdots \\
+    \sqrt{1} & 0 & 0 & 0 & 0 & \cdots \\
+    0 & \sqrt{2} & 0 & 0 & 0 & \cdots \\
+    0 & 0 & \sqrt{3} & 0 & 0 & \cdots \\
+    0 & 0 & 0 & \sqrt{4} & 0 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}\begin{bmatrix}
+    0 & \sqrt{1} & 0 & 0 & 0 & \cdots \\
+    0 & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & 0 & 0 & \sqrt{3} & 0 & \cdots \\
+    0 & 0 & 0 & 0 & \sqrt{4} & \cdots \\
+    0 & 0 & 0 & 0 & 0 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
+$$
+$$\bra{m}a_{+}a_{-}\ket{n}
+=\begin{bmatrix}
+    0 & 0 & 0 & 0 & 0 & \cdots \\
+    0 & 1 & 0 & 0 & 0 & \cdots \\
+    0 & 0 & 2 & 0 & 0 & \cdots \\
+    0 & 0 & 0 & 3 & 0 & \cdots \\
+    0 & 0 & 0 & 0 & 4 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
+$$
+Therefore 
+$$\bra{m}\hat{H}\ket{n}=
+\hbar\omega
+    \begin{bmatrix}
+    \frac{1}{2} & 0 & 0 & 0 & 0 & \cdots \\
+    0 & 1+\frac{1}{2} & 0 & 0 & 0 & \cdots \\
+    0 & 0 & 2+\frac{1}{2} & 0 & 0 & \cdots \\
+    0 & 0 & 0 & 3+\frac{1}{2} & 0 & \cdots \\
+    0 & 0 & 0 & 0 & 4+\frac{1}{2} & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
+$$
+\subsection*{(e)}
+We have that
+$$\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}
+m\omega^2\hat{x}^2$$
+Therefore we have that from part (c):
+$$\bra{m}\hat{H}\ket{n}=
+\frac{1}{2m}\bar{m}\hat{p}^2\ket{n}+
+\frac{1}{2}m\omega^2\bar{n}\hat{x}^2\ket{n}$$
+$$\bra{m}\hat{H}\ket{n}=-\frac{\omega\hbar}{4}
+\begin{bmatrix}
+    -1 & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & -3 & 0 & \sqrt{6} & 0 & \cdots \\
+    \sqrt{2} & 0 & -5 & 0 & \sqrt{10} & \cdots \\
+    0 & \sqrt{6} & 0 & -7 & 0 & \cdots \\
+    0 & 0 & \sqrt{10} & 0 & -9 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
++\frac{1}{2}m\omega^2\frac{\hbar}{2m\omega}
+\begin{bmatrix}
+    1 & 0 & \sqrt{2} & 0 & 0 & \cdots \\
+    0 & 3 & 0 & \sqrt{6} & 0 & \cdots \\
+    \sqrt{2} & 0 & 5 & 0 & \sqrt{10} & \cdots \\
+    0 & \sqrt{6} & 0 & 7 & 0 & \cdots \\
+    0 & 0 & \sqrt{10} & 0 & 9 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
+$$
+Thus we get 
+$$
+\bra{m}\hat{H}\ket{n}
+=\frac{\omega\hbar}{4}
+\begin{bmatrix}
+    2 & 0 & 0 & 0 & 0 & \cdots \\
+    0 & 6 & 0 & 0 & 0 & \cdots \\
+    0 & 0 & 10 & 0 & 0 & \cdots \\
+    0 & 0 & 0 & 14 & 0 & \cdots \\
+    0 & 0 & 0 & 0 & 18 & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}$$
+Which is the same matrix we found in part (d). Since this 
+matrix only has nonzero elements on the diagonal and the
+values are real, this matrix is hermitian.
+\subsection*{(f)}
+We have that 
+$$a_{+}\ket{2}=\sqrt{3}\ket{3}$$
+$$a_{-}\ket{2}=\sqrt{2}\ket{1}$$
+Therefore we have that 
+$$\hat{x}\ket{2}=\sqrt{\frac{\hbar}{2m\omega}}(\sqrt{3}\ket{3}+\sqrt{2}\ket{1})$$
+$$\hat{p}\ket{2}=i\sqrt{\frac{\hbar m\omega}{2}}(\sqrt{3}\ket{3}-\sqrt{2}\ket{1})$$
+And:
+$$\hat{x}^2\ket{2}=\frac{\hbar}{2m\omega}(\sqrt{12}\ket{4}
++\sqrt{2}\ket{0}+5\ket{2})$$
+$$\hat{p}^2\ket{2}=-\frac{\hbar m\omega}{2}(\sqrt{12}\ket{4}
++\sqrt{2}\ket{0}-5\ket{2})$$
+Therefore we have that 
+$$\hat{H}\ket{2}=
+\hbar\omega\left(2+\frac{1}{2}\right)\ket{2}$$
+\section*{Problem 4}
+
+
+
+
+
+\end{document}
