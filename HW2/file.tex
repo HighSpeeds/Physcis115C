@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\author{Lawrence Liu}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,stmaryrd}
+\usepackage{physics}
+\usepackage{pdfpages}
+\newcommand{\Laplace}{\mathscr{L}}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{amssymb}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}}
+\lstset{style=mystyle}
+\title{Physics 115C Hw 2}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\subsection*{(a)}
+We have that the first order corrections to the energy is given by 
+$$
+E_{n}^{1}=\bra{\psi_n}H'\ket{\psi_n}
+$$
+Therefore in our case we have that 
+$$
+    E_{n}^{1}=\alpha\bra{\psi_n}\delta(x-\frac{L}{2})\ket{\psi_n}
+$$
+Therefore we get that 
+\begin{align*}
+    E_{n}^{1}&=\alpha\int
+    \psi_n^*(x) \delta(x-\frac{L}{2})\psi_n(x)dx\\
+    &=\alpha |\psi(\frac{L}{2})|^2 \\
+    &= \alpha \frac{2}{L} \sin^2\left(\frac{n\pi}{2}\right)\\
+    &=\begin{cases}
+    \alpha \frac{2}{L} & \text{if $n$ is odd}\\
+    0 & \text{if $n$ is even}
+    \end{cases}
+\end{align*}
+\subsection*{(b)}
+\includegraphics*[width=0.5\textwidth]{wavefunction.png}
+As we can see the states that do not exhibit a energy 
+shift of the first order, are states where the probability
+density is zero at the location of the perubation. Thus the 
+particle will not feel the effect of the perubation.
+\subsection*{(c)}
+Likewise we can see that the states that do exhibit a energy
+shift are states where the probability density is not zero at the
+location of the perubation. Thus the particle will feel the effect
+of the perubation.
+\section*{Problem 2}
+
+\end{document}
