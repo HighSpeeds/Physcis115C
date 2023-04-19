@@ -152,7 +152,48 @@ $$\ket{\phi} = \int_{-\infty}^{\infty} dx\ket{x}\phi(x)$$
 And thus 
 $$\bra{\psi}\ket{\phi}=\int_{-\infty}^{\infty} \psi^{*}(x)\phi(x)dx$$
 \section*{Problem 2}
-TODO
+\subsection*{(a)}
+We have that 
+$$H=\Omega \hbar (\hat{S_z})^2 = \Omega \hbar\begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & 1
+\end{bmatrix}$$
+Therefore we have that 
+$$\hat{S_z}\ket{-1} = -\hbar \ket{-1}$$
+$$\hat{S_z}\ket{0} = 0\hbar \ket{0}$$
+$$\hat{S_z}\ket{1} = \hbar \ket{1}$$
+And:
+$$H\ket{-1} = \Omega \hbar \ket{-1}$$
+$$H\ket{0} = 0\Omega \hbar \ket{0}$$
+$$H\ket{1} = \Omega \hbar \ket{1}$$
+\subsection*{(b)}
+We have that the 
+$$\ket{\psi(t)}=\frac{1}{\sqrt{2}}\left(\ket{0}+
+e^{-i\Omega t}\ket{1}\right)$$
+Therefore we have that the probability that the 
+state is in the state $\ket{\psi}$ is given by 
+$$|\bra{\psi(t)}\ket{\psi}|^2=\frac{1}{4}
+\left|1+
+e^{-i\Omega t}\ket{1}\right|^2$$
+$$|\bra{\psi(t)}\ket{\psi}|^2 = 
+\frac{1}{4}\left(2+2\cos(\Omega t)\right)$$
+\subsection*{(c)}
+$\ket{1}$ and $\ket{-1}$ have the highest eigenvalue 
+of $H$, therefore we have that the state after measurement is given by:
+$$
+\ket{\theta'}=\frac{1}{\sqrt{10}}\left(3\ket{1}+\ket{-1}\right)
+$$
+And since if we measure $\ket{1}$ with $\hat{S_z}$
+we will get and eigenvalue $\hbar$. The probability
+of getting $\hbar$ is the probability of the state being in 
+$\ket{1}$, therefore the probability of getting $\hbar$ is
+$\frac{9}{10}$.
+\subsection*{(d)}
+If we do not measure the energy the state is given by:
+$$\ket{\theta} = \frac{1}{\sqrt{14}}
+\left(3\ket{1}+2\ket{0}+\ket{-1}\right)$$
+And the probability of getting $\hbar$ is $\frac{9}{14}$.
 \section*{Problem 3}
 \subsection*{(a)}
 We have that 
@@ -395,8 +436,7 @@ we have that $|\bra{x}\ket{n}|^2$ is even. Therefore we have that
 $$\bra{n}x\ket{n}=\int x|\bra{x}\ket{n}|^2 dx=0$$
 Therefore the dipole moment of a stationary state is $0$ in one dimension. 
 Generalizing to 3 dimensions we have that $\bra{r}\ket{n}$ is even along all 
-3 dimensions, ie that $\bra{r}\ket{n}=\psi(x,y,z)=
-\psi(-x,y,z)=\psi(x,-y,z)=\psi(x,y,-z)$. Therefore we have that 
+3 dimensions, ie that $\bra{r}\ket{n}=\psi(x,y,z)=\psi(-x,-y,-z)$. Therefore we have that 
 $$\bra{n}r\ket{n}=\int r|\bra{r}\ket{n}|^2 d^3r=0$$
 Therefore we have that
 $$\bra{n}(qr)\ket{n}=\bra{n}\mathbf{p}\ket{n}=0$$
