@@ -40,7 +40,7 @@ Therefore we get that
     \end{cases}
 \end{align*}
 \subsection*{(b)}
-\includegraphics*[width=0.5\textwidth]{wavefunction.png}
+\includegraphics*[width=0.5\textwidth]{wavefunction.png}\\
 As we can see the states that do not exhibit a energy 
 shift of the first order, are states where the probability
 density is zero at the location of the perubation. Thus the 
@@ -50,6 +50,31 @@ Likewise we can see that the states that do exhibit a energy
 shift are states where the probability density is not zero at the
 location of the perubation. Thus the particle will feel the effect
 of the perubation.
+\subsection*{(d)}
+The delta function acts to effectively "sample" the wavefunction for the 
+first order correction in the energy. Thus for the maximum first order 
+energy corrections, we would want to place the delta function 
+at the location where the probability density is the largest. Therefore for the 
+$n=2$ state this will be $\delta(x-\frac{L}{4}),
+\delta(x-\frac{3L}{4})$. For the $n=4$ state this would be 
+$\delta(x-\frac{L}{8}),\delta(x-\frac{3L}{8}),\delta(x-\frac{5L}{8}),
+\delta(x-\frac{7L}{8})$. And for 
+the $n=6$ state this would be
+$\delta(x-\frac{1}{12}L),\delta(x-\frac{3}{12}L),\delta(x-\frac{5}{12}L),
+\delta(x-\frac{7}{12}L),\delta(x-\frac{9}{12}L),\delta(x-\frac{11}{12}L)$.
+\subsection*{(e)}
+Since it samples the wavefunction, as we move the delta function, the resulting 
+first order correction will just be the amplitude of the wavefunction at the
+delta function:\\
+\includegraphics*[width=0.5\textwidth]{fig1.png}
 \section*{Problem 2}
+\subsection*{(a)}
+$H^0=\omega S_z$, thereofre the eigenvalues are $+1$ and $-1$, and the 
+eigenstates are $\ket{\uparrow_z}=[1,0]^T$ and $\ket{\downarrow_z}=[0,1]^T$.
+\subsection*{(b)}
+We have that the characteristic equation is given by
+$$x^2-\omega^2-(\lambda\Omega)^2=0$$
+Therefore the egienvalues are $\pm\sqrt{\omega^2+(\lambda\Omega)^2}$.
+
 
 \end{document}
