@@ -149,5 +149,74 @@ We already proved equality holds for this when we proved that the $\ket{0}$ comp
 of $H\ket{\psi_1}$ and $\sqrt{\omega^2+(\lambda\Omega)^2}\ket{\psi_1}$ are equal. Thus $\ket{\psi_2}$ is the eigenstate 
 for the energy eigenvalue $-\sqrt{\omega^2+(\lambda\Omega)^2}$.
 \subsection*{(d)}
+\includegraphics*[width=0.5\textwidth]{fig2.png}\\
+As we can see around $\omega=0$ the energy eigenvalues become 
+those for only the perturbation term, ie they become $\pm\lambda\Omega$.
+This is because the unperturbed hamiltonian becomes way smaller than the perturbation.
+\subsection*{(e)}
+We have that:
+$$\left.\frac{d\sqrt{\omega^2+(\lambda\Omega)^2}}{d\lambda}\right|_{\lambda=0}=0$$
+so the first order correction is $0$. taking the derivative again we get 
+$$\left.\frac{d^2\sqrt{\omega^2+(\lambda\Omega)^2}}{d\lambda^2}\right|_{\lambda=0}=\frac{\Omega^2}{\omega}$$
+Therefore we have that the second order correction is $\frac{\Omega^2}{\omega}$.\\\\
+For the eigenstates we have that 
+$$\left.\frac{d\cos\left(\frac{\phi}{2}\right)}{d\lambda}\right|_{\lambda=0}=0$$
+$$\left.\frac{d^2\sin\left(\frac{\phi}{2}\right)}{d\lambda^2}\right|_{\lambda=0}=\frac{\Omega^2}{4\omega^2}$$
+and 
+$$\left.\frac{d\sin\left(\frac{\phi}{2}\right)}{d\lambda}\right|_{\lambda=0}=\frac{\Omega}{2\omega}$$
+$$\left.\frac{d^2\cos\left(\frac{\phi}{2}\right)}{d\lambda^2}\right|_{\lambda=0}=-\frac{\Omega^2}{4\omega^2}$$
+Therefore we have that the first and second order corrections to the energy eigenstates are 
+$$\ket{\psi_1}\approx \ket{0}+\frac{\Omega\lambda}{2\omega}\ket{1}+\frac{\Omega^2\lambda^2}{4\omega^2}\ket{0}$$
+and
+$$\ket{\psi_2}\approx \ket{1}-\frac{\Omega\lambda}{2\omega}\ket{0}+\frac{\Omega^2\lambda^2}{4\omega^2}\ket{1}$$
+\subsection*{(f)}
+The perturbation is $H'=\lambda\Omega\sigma_x$:
+Therefore we have the first order corrections are 
+$$E_{1}^{1}=\bra{0}H'\ket{0}=\lambda\Omega\bra{0}\ket{1}=0$$
+and
+$$E_{2}^{1}=\bra{1}H'\ket{1}=\lambda\Omega\bra{1}\ket{0}=0$$
+\subsection*{(g)}
+This make sense when comparing to the results in (e), since both methods get 
+that the first order correction to the energy eigenvalues is $0$.
+\subsection*{(h)}
+We have that first order correction for the energy eigenstates are:
+$$\ket{\psi_1^{1}}=\frac{\bra{1}H'\ket{0}}{E_{1}-E_{0}}\ket{1}$$
+$$\ket{\psi_1^{1}}=\frac{\lambda\Omega}{2\omega}\ket{1}$$
+And for the other state:
+$$\ket{\psi_2^{1}}=\frac{\bra{0}H'\ket{1}}{E_{0}-E_{1}}\ket{0}$$
+$$\ket{\psi_2^{1}}=-\frac{\lambda\Omega}{2\omega}\ket{0}$$
+\subsection*{(i)}
+This result makes sense compared the the results in (e) since both methods get
+that the shift for the energy eigenstates $\frac{\lambda\Omega}{2\omega}\ket{1}$ for 
+$\ket{\psi_1}$ and $-\frac{\lambda\Omega}{2\omega}\ket{0}$ for $\ket{\psi_2}$.
+\subsection*{(j)}
+$$E_{0}^{2}=\frac{|\bra{1}H'\ket{0}|^2}{E_{0}-E_{1}}$$
+$$E_{0}^{2}=\frac{\lambda^2\Omega^2}{4\omega^2}$$
+and
+$$E_{1}^{2}=\frac{|\bra{0}H'\ket{1}|^2}{E_{1}-E_{0}}$$
+$$E_{1}^{2}=\frac{\lambda^2\Omega^2}{4\omega^2}$$
+As we can see this is the same as the result in (e) for the second order correction to 
+the energy eigenvalues.
+\section*{Problem 3}
+\subsection*{(a)}
+We have that the eigenvalues are given by the characteritic equation
+\begin{align*}
+    (x-E_a^0-\lambda V_{aa})(x-E_b^0-\lambda V_{bb})-\lambda^2V_{ab}V_{ba}&=0\\
+    x^2-(E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})x+(E_a^0+\lambda V_{aa})
+(E_b^0+\lambda V_{bb})-\lambda^2V_{ab}V_{ba}&=0
+\end{align*}
+Solving we get:
+\begin{align*}
+    x&=\frac{1}{2}((E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})\pm\\
+    \sqrt{(E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})^2-4((E_a^0+\lambda V_{aa})
+    (E_b^0+\lambda V_{bb})-\lambda^2V_{ab}V_{ba})})
+\end{align*}
+\subsection*{(b)}
+We have that 
+\begin{align*}
+    \left.\frac{d}{d\lambda}\sqrt{(E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})^2-4((E_a^0+\lambda V_{aa})
+    (E_b^0+\lambda V_{bb})-\lambda^2V_{ab}V_{ba})}\right|_{\lambda=0} &= \\
+    \frac{1}{2(E_a-E_b)}(2(E_a^0+E_b^0)(V_{aa}+V_{bb})-4(V_{aa}E_{b}^0+V_{bb}E_{a}^0))
+\end{align*}
 
 \end{document}
