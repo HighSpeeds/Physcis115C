@@ -69,12 +69,85 @@ delta function:\\
 \includegraphics*[width=0.5\textwidth]{fig1.png}
 \section*{Problem 2}
 \subsection*{(a)}
-$H^0=\omega S_z$, thereofre the eigenvalues are $+1$ and $-1$, and the 
+$H^0=\omega S_z$, thereofre the eigenvalues are $+\omega$ and $-\omega$, and the 
 eigenstates are $\ket{\uparrow_z}=[1,0]^T$ and $\ket{\downarrow_z}=[0,1]^T$.
 \subsection*{(b)}
 We have that the characteristic equation is given by
 $$x^2-\omega^2-(\lambda\Omega)^2=0$$
 Therefore the egienvalues are $\pm\sqrt{\omega^2+(\lambda\Omega)^2}$.
-
+\subsection*{(c)}
+We have that 
+$$H\ket{\psi_1}=\left(\omega\cos\left(\frac{\phi}{2}\right)
++\lambda\Omega\sin(\frac{\phi}{2})\right)\ket{0}+\left(\lambda\Omega\cos\left(\frac{\phi}{2}\right)
+-\omega\sin(\frac{\phi}{2})\right)\ket{1}$$
+In order $\ket{\psi_1}$ to be an eigenstate we must have:
+$$
+H\ket{\psi_1} = \sqrt{\omega^2+(\lambda\Omega)^2}\ket{\psi_1}
+$$
+ie we need:
+\begin{align*}
+    \omega\cos\left(\frac{\phi}{2}\right)
++\lambda\Omega\sin\left(\frac{\phi}{2}\right)
+& = \sqrt{\omega^2+(\lambda\Omega)^2} \cos\left(\frac{\phi}{2}\right)
+\\
+\lambda\Omega\cos\left(\frac{\phi}{2}\right)
+-\omega\sin\left(\frac{\phi}{2}\right) & = \sqrt{\omega^2+(\lambda\Omega)^2} \sin\left(\frac{\phi}{2}\right)
+\end{align*}
+We have that
+\begin{align*}
+    \omega\cos\left(\frac{\phi}{2}\right)
++\lambda\Omega\sin\left(\frac{\phi}{2}\right)
+& = \sqrt{\omega^2+(\lambda\Omega)^2} \cos\left(\frac{\phi}{2}\right)
+\\
+\cos(\phi)\cos\left(\frac{\phi}{2}\right)+
+\sin(\phi)\sin\left(\frac{\phi}{2}\right) &= \cos\left(\frac{\phi}{2}\right)\\
+\sin^2(\phi)\sin^2\left(\frac{\phi}{2}\right) &= (1-\cos(\phi))^2\cos\left(\frac{\phi}{2}\right)\\
+\sin^2(\phi)\frac{1-\cos(\phi)}{2} &= (1-\cos(\phi))^2\frac{1+\cos(\phi)}{2}\\
+(1-\cos^2(\phi))(1-\cos(\phi))&=(1-\cos(\phi))^2(1+\cos(\phi))\\
+(1-\cos(\phi))^2(1+\cos(\phi))&=(1-\cos(\phi))^2(1+\cos(\phi))
+\end{align*}
+Likewise we have that 
+\begin{align*}
+    \lambda\Omega\cos\left(\frac{\phi}{2}\right)
+    -\omega\sin\left(\frac{\phi}{2}\right) & = \sqrt{\omega^2+(\lambda\Omega)^2} \sin\left(\frac{\phi}{2}\right)\\
+    \sin(\phi)\cos\left(\frac{\phi}{2}\right)-\cos(\phi)\sin\left(
+    \frac{\phi}{2}\right) &= \sin\left(\frac{\phi}{2}\right)\\
+    \sin^2(\phi)\cos^2\left(\frac{\phi}{2}\right) &= (1+\cos(\phi))^2\sin^2\left(\frac{\phi}{2}\right)\\
+    \sin^2(\phi)(1+\cos(\phi)) &= (1+\cos(\phi))^2(1-\cos(\phi))\\
+    (1-\cos^2(\phi))(1+\cos(\phi)) &= (1+\cos(\phi))^2(1-\cos(\phi))\\
+    (1+\cos(\phi))^2(1-\cos(\phi)) &= (1+\cos(\phi))^2(1-\cos(\phi))
+\end{align*}
+Therefore as we can see $\ket{\psi_1}$ is the eigenstate 
+for the energy eigenvalue $\sqrt{\omega^2+(\lambda\Omega)^2}$.\\\\
+We can repeat a similar process for $\ket{\psi_2}$, we want to have 
+$$
+H\ket{\psi_2} = -\sqrt{\omega^2+(\lambda\Omega)^2}\ket{\psi_2}
+$$
+ie we need:
+\begin{align*}
+    -\omega\sin\left(\frac{\phi}{2}\right)+\lambda\Omega\cos\left(
+        \frac{\phi}{2}\right) &= \sqrt{\omega^2+(\lambda\Omega)^2}\sin\left(\frac{\phi}{2}\right)\\
+    -\lambda\Omega\sin\left(\frac{\phi}{2}\right)-\omega\cos\left(\frac{\phi}{2}\right)
+    &= -\sqrt{\omega^2+(\lambda\Omega)^2}\cos\left(\frac{\phi}{2}\right)
+\end{align*}
+For the first equation we have that 
+\begin{align*}
+    -\omega\sin\left(\frac{\phi}{2}\right)+\lambda\Omega\cos\left(
+        \frac{\phi}{2}\right) &= \sqrt{\omega^2+(\lambda\Omega)^2}\sin\left(\frac{\phi}{2}\right)\\
+    -\cos(\phi)\sin\left(\frac{\phi}{2}\right)+\sin(\phi)\cos\left(\frac{\phi}{2}\right) &= \sin\left(\frac{\phi}{2}\right)\\
+    % -\sin(\phi)\cos\left(\frac{\phi}{2}\right) &= (1-\cos(\phi))\sin\left(\frac{\phi}{2}\right)
+\end{align*}
+We already proved equality holds for this when we proved that the $\ket{1}$ components 
+of $H\ket{\psi_1}$ and $\sqrt{\omega^2+(\lambda\Omega)^2}\ket{\psi_1}$ are equal. For the second equation we have 
+\begin{align*}
+    -\lambda\Omega\sin\left(\frac{\phi}{2}\right)-\omega\cos\left(\frac{\phi}{2}\right)
+    &= -\sqrt{\omega^2+(\lambda\Omega)^2}\cos\left(\frac{\phi}{2}\right)\\
+    \cos(\phi)\cos\left(\frac{\phi}{2}\right)+
+\sin(\phi)\sin\left(\frac{\phi}{2}\right) &= \cos\left(\frac{\phi}{2}\right)
+\end{align*}
+We already proved equality holds for this when we proved that the $\ket{0}$ components 
+of $H\ket{\psi_1}$ and $\sqrt{\omega^2+(\lambda\Omega)^2}\ket{\psi_1}$ are equal. Thus $\ket{\psi_2}$ is the eigenstate 
+for the energy eigenvalue $-\sqrt{\omega^2+(\lambda\Omega)^2}$.
+\subsection*{(d)}
 
 \end{document}
