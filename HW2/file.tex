@@ -15,7 +15,7 @@
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour}}
 \lstset{style=mystyle}
-\title{Physics 115C Hw 2}
+\title{Physics 115C HW 2}
 \begin{document}
 \maketitle
 \section*{Problem 1}
@@ -208,15 +208,35 @@ We have that the eigenvalues are given by the characteritic equation
 Solving we get:
 \begin{align*}
     x&=\frac{1}{2}((E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})\pm\\
-    \sqrt{(E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})^2-4((E_a^0+\lambda V_{aa})
-    (E_b^0+\lambda V_{bb})-\lambda^2V_{ab}V_{ba})})
+    \sqrt{(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})^2-4(\lambda^2V_{ab}V_{ba})})
 \end{align*}
 \subsection*{(b)}
 We have that 
 \begin{align*}
-    \left.\frac{d}{d\lambda}\sqrt{(E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})^2-4((E_a^0+\lambda V_{aa})
-    (E_b^0+\lambda V_{bb})-\lambda^2V_{ab}V_{ba})}\right|_{\lambda=0} &= \\
-    \frac{1}{2(E_a-E_b)}(2(E_a^0+E_b^0)(V_{aa}+V_{bb})-4(V_{aa}E_{b}^0+V_{bb}E_{a}^0))
+    \left.\frac{d}{d\lambda}\sqrt{(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})^2-4(\lambda^2V_{ab}V_{ba})}\right|_{\lambda=0} &= 
+    \frac{1}{2(E_a^0-E_b^0)}(2(E_a^0-E_b^0)(V_{aa}-V_{bb}))\\
+    &=(V_{aa}-V_{bb})
 \end{align*}
-
+and
+\begin{align*}
+    \left.\frac{d^2}{d\lambda^2}\sqrt{(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})^2-4(\lambda^2V_{ab}V_{ba})}\right|_{\lambda=0} &=
+    \frac{4 V_{ab}V_{ba}}{E_b-E_a}
+\end{align*}
+Therefore we get the second order taylor series expansion of the 
+eigenvalues as:
+\begin{align*}
+    x = \frac{1}{2}\left((E_a^0+\lambda V_{aa}+E_b^0+\lambda V_{bb})
+    \pm\left(E_a^0-E_b^0+\lambda(V_{aa}-V_{bb})+\frac{4 \lambda^2V_{ab}V_{ba}}{E_b-E_a}\right)\right)
+\end{align*}
+\subsection*{(c)}
+We can rewrite 
+$$\sqrt{(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})^2-4(\lambda^2V_{ab}V_{ba})}$$
+As
+$$(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})\sqrt{1-\frac{4(\lambda^2V_{ab}V_{ba})}{(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})^2}}$$
+As $\lambda\to0$ we have that becomes
+$$(E_a^0+\lambda V_{aa}-E_b^0-\lambda V_{bb})\sqrt{1-\frac{4(\lambda^2V_{ab}V_{ba})}{(E_a^0-E_b^0)^2}}$$
+We have that the taylor series of $\sqrt{1+x}$ around $|x|\leq\frac{1}{2}$ therefore we have that the taylor series for 
+$\sqrt{1-\frac{4(\lambda^2V_{ab}V_{ba})}{(E_a^0-E_b^0)^2}}$ converges only if 
+$$\left|\frac{4(V_{ab}V_{ba})}{(E_a^0-E_b^0)^2}\right|^2\leq\frac{1}{2}$$
+$$\left|\frac{4(V_{ab})}{(E_a^0-E_b^0)^2}\right|\leq\frac{1}{4}$$
 \end{document}
