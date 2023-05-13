@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}
+\author{Lawrence Liu}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,stmaryrd}
+\usepackage{physics}
+\usepackage{pdfpages}
+\newcommand{\Laplace}{\mathscr{L}}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{amssymb}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}}
+\lstset{style=mystyle}
+\title{Physics 115C HW 3}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\subsection*{(a)}
+We have that 
+\begin{align*}
+    \frac{d}{dt}<xp> &= \frac{i}{\hbar}<[xp,H]>+\left<\frac{\partial xp}{\partial t}\right>\\
+    &= \frac{i}{\hbar}<xpH-Hxp>\\
+    &= \frac{i}{\hbar}<xpH>-\frac{i}{\hbar}<Hxp>\\
+    &= \frac{i}{\hbar}\left<xp\left(\frac{p^2}{2m}+V(x)\right)\right>-\frac{i}{\hbar}\left<\left((\frac{p^2}{2m}+V(x))\right)xp\right>\\
+    &= \frac{i}{\hbar}\left<x\frac{p^3}{2m}+xV(x)p+xpV(x)\right>-\frac{i}{\hbar}\left<x\frac{p^3}{2m}+i\hbar\frac{p^2}{m}+V(x)xp\right>\\
+    &= \left<\frac{p^2}{m}\right>-\left<\frac{dV(x)}{dx}\right>\\
+    &= \left<T\right>-\left<\frac{dV(x)}{dx}\right>
+\end{align*}
+\subsection*{(b)}
+If we have that a state is stationary then we have that 
+$$\psi(x,t) = \psi(x)e^{-iEt/\hbar}$$
+Thus we have 
+\begin{align*}
+\frac{\partial}{\partial t} <xp> &= \frac{\partial}{\partial t}\int \psi^*(x,t) xp \psi(x,t) dx\\
+&= \frac{\partial}{\partial t}\int \psi^*(x)e^{iEt/\hbar} xp \psi(x)e^{-iEt/\hbar} dx\\
+&= \frac{\partial}{\partial t}\int \psi^*(x) xp \psi(x) dx\\
+&= 0
+\end{align*}
+Therefore we have that 
+$$0 = 2\left<T\right>-\left<\frac{dV(x)}{dx}\right>$$
+$$2\left<T\right> = \left<\frac{dV(x)}{dx}\right>$$
+\subsection*{(c)}
+We have that 
+\begin{align*}
+\left<x\frac{dV(x)}{dx}\right> &= \left<m\omega^2x^2\right>\\
+&= 2<V>\\
+\end{align*}
+Therefore we have that 
+$$<T> = <V>$$
+And thus we have that since 
+$$<T>+<V>=E_n$$
+$$<T>=<V>=\frac{E_n}{2}$$
+\subsection*{(d)}
+\begin{align*}
+    \frac{d}{dt}\left<r\cdot p\right> &= \frac{i}{\hbar}<[H,rp]>+\left<\frac{\partial rp}{\partial t}\right>\\
+    &= \frac{i}{\hbar}<H\cdot r \cdot p-r\cdot p \cdot H>\\
+    &= \frac{i}{\hbar}<H\cdot r \cdot p>-\frac{i}{\hbar}<r \cdot p \cdot H>\\
+    &= \frac{i}{\hbar}\left<\left(-\frac{\hbar^2}{2m}\nabla^2+V(r)\right)\cdot r\cdot p\right>-\frac{i}{\hbar}\left<r\cdot p\cdot\left(-\frac{\hbar^2}{2m}\nabla^2+V(r)\right)\right>\\
+    &= \frac{i}{\hbar}\left<-r\frac{\hbar^2}{2m}\nabla^3-i\hbar\frac{\hbar^2}{2m}\nabla^2+V\cdot r\cdot p\right> - \frac{i}{\hbar}\left<-r\frac{\hbar^2}{2m}\nabla^3-i\hbar\frac{\hbar^2}{2m}\nabla^2+V\cdot r\cdot p+ r\cdot p \cdot V\right>\\
+    &= 2\left<T\right>-\left<r\cdot \nabla V\right>\\
+\end{align*}
+Therefore for a stationary state we have that
+$$0 = 2\left<T\right>-\left<r\cdot \nabla V\right>$$
+$$2\left<T\right> = \left<r\cdot \nabla V\right>$$
+\subsection*{(e)}
+We have that for the hydrogen atom:
+\begin{align*}
+    \left<r\cdot \nabla V\right> &= \left<r\cdot \frac{e^2}{4\pi\epsilon_0r^2}\right>\\
+    &= \left<\frac{e^2}{4\pi\epsilon_0r}\right>\\
+    &= -\left<V\right>\\
+\end{align*}
+Therefore we have that
+$$2\left<T\right> = -\left<V\right>$$
+$$\left<T\right> + \left<V\right> = E_n$$
+$$-\left<T\right> = E_n$$
+Therefore we have that
+$$\left<T\right> = -E_n$$
+And:
+$$\left<V\right> = 2E_n$$
+
+
+
+\section*{Problem 2}
+\subsection*{(a)}
+We have that 
+$$H = -\gamma\frac{\hbar}{2} \begin{bmatrix}
+    B_z & B_x\\
+    B_x & -B_z
+\end{bmatrix}$$
+Therefore we can see that the the characteristic equation is
+$$\det(H - \lambda I) = \lambda^2 -\left(\gamma\frac{\hbar}{2}\right)^2(B_z^2+B_x^2) = 0$$
+Therefore we have that the energy eigenvalues are
+$$E = \pm \gamma\frac{\hbar}{2}\sqrt{B_z^2+B_x^2}$$
+\subsection*{(b)}
+We have that 
+\begin{align*}
+    \bar{H}&=\bra{\psi_{trial}}H\ket{\psi_{trial}}\\
+    &=-\gamma\frac{\hbar}{2}\begin{bmatrix}
+        \cos(\phi /2) & \sin(\phi /2)
+    \end{bmatrix}
+    \begin{bmatrix}
+        B_z\cos(\phi /2)+B_x\sin(\phi /2)\\
+        B_x\cos(\phi /2)-B_z\sin(\phi /2)
+    \end{bmatrix}\\
+    &=-\gamma\frac{\hbar}{2}\left(B_z\cos^2(\phi /2)-B_z\sin^2(\phi /2)+2B_x\cos(\phi /2)\sin(\phi /2)\right)\\
+\end{align*}
+To minimize this we take the derivative with respect to $\phi$ and set it equal to zero
+\begin{align*}
+    \frac{\partial}{\partial \phi} \bar{H} &= -\gamma\frac{\hbar}{2}\left(-B_z\cos(\phi/2)\sin(\phi/2)-B_z\cos(\phi/2)sin(\phi/2)+B_x\cos^2(\phi/2)-B_x\sin^2(\phi/2)\right)\\
+    &=-\gamma\frac{\hbar}{2}\left(B_x\cos(\phi)-B_z\sin(\phi)\right)\\
+\end{align*}
+Stetting this to zero we get $\phi=\tan^{-1}\left(\frac{B_x}{B_z}\right)$ and therefore 
+we get that 
+$$\bar{H} = -\gamma\frac{\hbar}{2}\left(\frac{B_z}{\sqrt{1+\left(\frac{B_x}{B_z}\right)^2}}+\frac{B_x\frac{B_x}{B_z}}{\sqrt{1+\left(\frac{B_x}{B_z}\right)^2}}\right)$$
+$$\bar{H} = -\gamma\frac{\hbar}{2}\sqrt{B_z^2+B_x^2}$$
+\subsection*{(c)}
+We recover exactly the same result in part (a). There was a degree of 
+freedom which we did not use in part (a) which was the phase of the
+eigenstate. We can see that in our trial eigenstate it was all real. 
+\section*{Problem 3}
+\subsection*{(a)}
+We have 
+\begin{align*}
+    \bra{\psi_{trial}}H\ket{\psi_{trial}} &= \sum_{i=0}^{n} \bra{\psi_{trial}}\ket{\psi_i}\bra{\psi_i}H\ket{\psi_i}\bra{\psi_i}\ket{\psi_{trial}}
+\end{align*}
+Since 
+$$\bra{\psi_{trial}}\ket{\psi_0} = 0$$
+We have that 
+\begin{align*}
+    \bra{\psi_{trial}}H\ket{\psi_{trial}} &= \sum_{i=1}^{n} \bra{\psi_{trial}}\ket{\psi_i}\bra{\psi_i}H\ket{\psi_i}\bra{\psi_i}\ket{\psi_{trial}}\\
+    &= \sum_{i=1}^{n} \left|\bra{\psi_{trial}}\ket{\psi_i}\right|^2E_i\\
+    &\geq E_1\sum_{i=1}^{n} \left|\bra{\psi_{trial}}\ket{\psi_i}\right|^2\\
+    &= E_1
+\end{align*}
+\subsection*{(b)}
+\includegraphics*[scale=0.5]{prob3b.png}
+\subsection*{(c)}
+We have that for $x_1<\frac{a}{2}$
+$$\psi_{trial}(x_1) = Nx_1(\frac{a}{2}-x_1)(a-x_1)$$
+Let us defmine $x_2$ as a the location the same distance away from the center 
+of the well on the other side of the center. Therefore we have that
+$x_2 = a-x_1$. Therefore we have that
+$$\psi_{trial}(x_2) = N(a-x_1)(x_1-\frac{a}{2})x_1$$
+As we can see $\psi_{trial}(x_1) = -\psi_{trial}(x_2)$ and therefore
+the wavefunction is parity odd. \\\\
+We have that $\psi_{0}(x) = N'\sin(\pi x/a)$ is parity even around $a/2$
+and therefore we have that 
+$\psi_0(x)\psi_{trial}(x)$ is parity odd. Therefore we have that the integral of 
+it is $0$. Therefore we have that our trial wavefunction is orthogonal to the
+ground state wavefunction.
+\subsection*{(d)}
+We have that our ground state trial wavefunction is parity even,
+thus the multiple of it with our first excited state is parity odd.
+Therefore we have that the integral of it is $0$. Therefore we have that our trial wavefunction is orthogonal to the
+first excited state wavefunction.
+\subsection*{(e)}
+$$\int_{0}^{a} (x(a/2-x)(a-x))^2 dx = \frac{a^7}{840}$$
+Therefore $$N=\sqrt{\frac{840}{a^7}}$$
+\subsection*{(f)}
+We have that 
+$$-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi_{trial}(x) = -\frac{3\hbar^2}{m}\left(x-\frac{a}{2}\right)$$
+Therefore we have that 
+$$\bar{H} = \frac{\hbar^2 a^5}{40m} \frac{840}{a^7}$$
+$$\bar{H} = \frac{21\hbar^2}{ma^2}$$
+$$\bar{H} = \frac{42\hbar^2}{2ma^2}$$
+This is not that far off from the actual first excited state 
+energy of $\frac{(2\pi)^2\hbar^2}{2ma^2}=\frac{39.478\hbar^2}{2ma^2}$. With a difference of only 
+around $6.3\%$.
+
+
+% Therefore we can see that we 
+\end{document}
