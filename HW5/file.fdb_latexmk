@@ -1,7 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1684006361 "c:/Users/Lawrence/Desktop/UCLA/Physics115C/HW3/file.tex" "file.pdf" "file" 1684006362
-  "2f.png" 1684006358 24879 72c4d9989449c27543c46a7230ae1ec2 ""
-  "c:/Users/Lawrence/Desktop/UCLA/Physics115C/HW3/file.tex" 1684006358 11265 446c2a005bb12e44acfa344ee28187c9 ""
+["pdflatex"] 1684097309 "c:/Users/Lawrence/Desktop/UCLA/Physics115C/HW5/file.tex" "file.pdf" "file" 1684097310
+  "c:/Users/Lawrence/Desktop/UCLA/Physics115C/HW5/file.tex" 1684097308 7760 9a7eb6f2fdde6a0e7f44f97e83f7cb3c ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1664170015 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1664168346 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1664168346 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -37,8 +36,10 @@
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1664168346 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1664168346 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1664168346 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1664168346 32587 65067f817f408bc71a7312f3d9828a9b ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1664168346 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1664168346 34694 870c211f62cb72718a00e353f14f254d ""
+  "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1664168346 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1664171559 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty" 1664170515 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1664168346 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
@@ -86,12 +87,8 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1664173825 4635069 7677ee69604aae14ed48b153c111a7f7 ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664173939 3058684 372e0c0dae1f62bf1e7332b92ec9e6a1 ""
   "c:/texlive/2022/texmf.cnf" 1664173806 713 e69b156964470283e0530f5060668171 ""
-  "file.aux" 1684006362 33 cd8a9e253be16178be412705367a589a "pdflatex"
-  "file.tex" 1684006358 11265 446c2a005bb12e44acfa344ee28187c9 ""
-  "prob1a.png" 1684006358 106931 ce23d3ec02c218f17f298dfd6f7f0fbc ""
-  "prob1b1.png" 1684006358 70048 b42da8228dbcf98d18b7b834456c6d3f ""
-  "prob1b2.png" 1684006358 109791 2b4fcac488cde231517a08cf9f76476d ""
-  "prob1c.png" 1684006358 111843 1b5e7a795adbeebfeedb6fe5da5f60b6 ""
+  "file.aux" 1684097310 32 4d1825978335c8847f72f7c473f9edc8 "pdflatex"
+  "file.tex" 1684097308 7760 9a7eb6f2fdde6a0e7f44f97e83f7cb3c ""
   (generated)
   "file.aux"
   "file.log"
