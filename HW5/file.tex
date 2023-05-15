@@ -23,6 +23,22 @@
 It would take $(-13.6\text{eV} - (-14.36 \text{eV})) = 0.76\text{eV}$ to remove one of the 
 two electrons from the Hydrogen anion.
 \subsection*{(b)}
+We would expect that the ground state energy of the Hydrogen anion without
+electron electron repulsion would be $-27.2\text{eV}$. And thus it would take 
+$(-13.6\text{eV} - (-27.2 \text{eV})) = 13.6\text{eV}$ to remove one of the
+electrons.
+\subsection*{(c)}
+If the helium atom had 3 electrons, we would expect two to fill up the 
+$1s$ orbital and one to fill up the $2s$ orbital. If we ignore
+electron electron repulsion, we would expect that the 1s energy 
+of the helium atom would be $-54.4\text{eV}$, and the 
+2s electron would have an energy of $-13.6\text{eV}$. Therefore
+we would expect the ground state energy to be 
+$-68\text{eV}$.
+\subsection*{(d)}
+The shielding effect of 3 electrons on a two 
+proton nucleus would be higher than the shielding effect of 2 electrons
+on a one proton nucleus.
 \section*{Problem 2}
 \subsection*{(a)}
 We have that from the Virial theorem for a 
@@ -178,6 +194,111 @@ as $|\delta\omega|$ increases and it takes longer than
 at resonance.
 \section*{Problem 4}
 \subsection*{(a)}
-We have 
+We have that 
+$$H_0+H_1 = \begin{pmatrix}
+    2\hbar\omega & \hbar\lambda\\
+    \hbar\lambda & 0
+\end{pmatrix}$$
+In order for $E_{\pm}$ to be eigenvalue and $v_{\pm}$ to be 
+eigenvectors, we must have that
+\begin{align*}
+    (H_0+H_1)v_{+} &= E_{+}v_{+}\\
+    d \begin{pmatrix}
+        2\hbar\omega(\omega+\Delta)+\hbar\lambda^2\\
+        \hbar\lambda(\omega+\Delta)
+    \end{pmatrix} &= \hbar(\omega+\Delta)d\begin{pmatrix}
+        \omega+\Delta\\
+        \lambda
+    \end{pmatrix}\\
+    \begin{pmatrix}
+        2\hbar\omega^2+2\hbar\omega\Delta+\hbar\lambda^2\\
+        \hbar\lambda(\omega+\Delta)
+    \end{pmatrix} &= \begin{pmatrix}
+        \hbar(\omega+\Delta)^2\\
+        \hbar\lambda(\omega+\Delta)
+    \end{pmatrix}\\
+    \begin{pmatrix}
+        \hbar\omega^2+2\hbar\omega\Delta+\hbar\Delta^2\\
+        \hbar\lambda(\omega+\Delta)
+    \end{pmatrix} &= \begin{pmatrix}
+        \hbar\omega^2+2\hbar\omega\Delta+\hbar\Delta^2\\
+        \hbar\lambda(\omega+\Delta)
+    \end{pmatrix}
+\end{align*}
+\begin{align*}
+    (H_0+H_1)v_{-} &= E_{-}v_{-}\\
+    d \begin{pmatrix}
+        -2\hbar\omega\lambda + \hbar\lambda(\omega+\Delta)\\
+        -\hbar\lambda^2
+    \end{pmatrix} &= \hbar(\omega-\Delta)d\begin{pmatrix}
+        -\lambda\\
+        \omega+\Delta
+    \end{pmatrix}\\
+    \begin{pmatrix}
+        -\hbar\omega\lambda + \hbar\lambda\Delta\\
+        -\hbar\lambda^2
+    \end{pmatrix} &= \begin{pmatrix}
+        -\hbar\omega\lambda + \hbar\lambda\Delta\\
+        \hbar(\omega^2-\Delta^2)
+    \end{pmatrix}\\
+    \begin{pmatrix}
+        -\hbar\omega\lambda + \hbar\lambda\Delta\\
+        -\hbar\lambda^2
+    \end{pmatrix} &=
+    \begin{pmatrix}
+        -\hbar\omega\lambda + \hbar\lambda\Delta\\
+        -\hbar\lambda^2
+    \end{pmatrix}
+\end{align*}
+Therefore we can see that $v_{+}$ and $v_{-}$ are the 
+eigenvectors of $H_0+H_1$ and $E_{+}$ and $E_{-}$ are the
+eigenvalues of $H_0+H_1$.
+We can see that the magnitudes of the eigenvalues are
+$1$ as well since $(\omega+\Delta)^2+\lambda^2=2\omega\Delta+\Delta^2+\omega^2+\lambda^2=2\Delta(\omega+\Delta)=d^{-2}$.
+\subsection*{(b)}
+We have that 
+\begin{align*}
+    \ket{0} &= c((\omega+\Delta)v_{+}-\lambda v_{-})\\
+    &= cd \begin{pmatrix}
+        (\omega+\Delta)^2+\lambda^2\\
+        0
+    \end{pmatrix}
+\end{align*}
+Therefore we have that $c=d$ and thus we have 
+$$\ket{0} = d((\omega+\Delta)v_{+}-\lambda v_{-})$$
+Likewise we have that 
+$$\ket{1} = d(\lambda v_{+}+(\omega+\Delta)v_{-})$$
+Let us denote $v_{\pm} = \ket{\pm}$. We have that the time evolution of 
+$\ket{0,t}$ is given by
+$$\ket{0,t} = d((\omega+\Delta)e^{-\frac{iE_{+}t}{\hbar}}\ket{+}-
+\lambda e^{-\frac{iE_{-}t}{\hbar}}\ket{-})$$
+Therefore we have that the probability that the 
+system is in state $\ket{1}$ is given by 
+\begin{align*}
+    |\bra{1}\ket{0,t}|^2 &= (\omega+\Delta)^2\lambda^2 d^4\left| e^{-\frac{iE_{+}t}{\hbar}}
+    -e^{-\frac{iE_{-}t}{\hbar}}\right|^2\\
+    &= (\omega+\Delta)^2\lambda^2 d^4 (2-2\cos\left(\frac{E_{+}-E_{-}}{\hbar}t\right))\\
+    &= 4 (\omega+\Delta)^2\lambda^2 \frac{1}{4\Delta^2(\omega+\Delta)^2} \sin(\Delta t)^2\\
+    &= \frac{\lambda^2}{\Delta^2}\sin(\Delta t)^2
+\end{align*}
+\subsection*{(c)}
+We have that the first order correction is:
+\begin{align*}
+    c_{1}^{(1)}(t) &= \frac{1}{i\hbar}\int_{0}^{t} e^{-2\omega i t'} \hbar\lambda dt\\
+    &= \frac{\lambda}{2\omega}\left(e^{-2\omega i t}-1\right)
+\end{align*}
+Therefore the approximate probability that the system is in state $\ket{1}$ is given by
+\begin{align*}
+    |c_{0}^{(1)}(t)|^2 &= \frac{\lambda^2}{4\omega^2}\left(e^{-2\omega i t}-1\right)\left(e^{2\omega i t}-1\right)\\
+    &= \frac{\lambda^2}{4\omega^2}\left(2-2\cos(2\omega t)\right)\\
+    &= \frac{\lambda^2}{\omega^2}\sin^2(\omega t)
+\end{align*}
+\subsection*{(d)}
+If $\omega>>\lambda$ then we have that we can write our transition probability
+as 
+\begin{align*}
+    \frac{\lambda^2}{\Delta^2}\sin(\Delta t)^2 &= \frac{\lambda^2}{\omega^2\left(1+\frac{\lambda^2}{\omega^2}\right)}\sin\left(\omega\sqrt{1+\frac{\lambda^2}{\omega^2}}t\right)\\
+    &\approx \frac{\lambda^2}{\omega^2}\sin^2(\omega t)
+\end{align*}
 
 \end{document}
