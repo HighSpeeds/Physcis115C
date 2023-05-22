@@ -31,14 +31,18 @@ electrons.
 If the helium atom had 3 electrons, we would expect two to fill up the 
 $1s$ orbital and one to fill up the $2s$ orbital. If we ignore
 electron electron repulsion, we would expect that the 1s energy 
-of the helium atom would be $-54.4\text{eV}$, and the 
+of the helium atom would be $-54.4\text{eV}$, since there is 
+two electrons we would have $-108.8\text{eV}$, and the
 2s electron would have an energy of $-13.6\text{eV}$. Therefore
 we would expect the ground state energy to be 
-$-68\text{eV}$.
+$-122.4\text{eV}$.
 \subsection*{(d)}
-The shielding effect of 3 electrons on a two 
-proton nucleus would be higher than the shielding effect of 2 electrons
-on a one proton nucleus.
+If there were two electrons, they would be more likely to be on the 
+opposite sides of the nucleus. Thus the "shielding" effect of the 
+other electron would be less. Where as from the pauli inclusion 
+exclusion principle we know that for 3 electrons, one of them have 
+to be in a different state. Therefore these electrons won't be on the opposite
+side of the nucleus and thus the "shielding" effect of the other electrons will be higher.
 \section*{Problem 2}
 \subsection*{(a)}
 We have that from the Virial theorem for a 
@@ -297,8 +301,12 @@ Therefore the approximate probability that the system is in state $\ket{1}$ is g
 If $\omega>>\lambda$ then we have that we can write our transition probability
 as 
 \begin{align*}
-    \frac{\lambda^2}{\Delta^2}\sin(\Delta t)^2 &= \frac{\lambda^2}{\omega^2\left(1+\frac{\lambda^2}{\omega^2}\right)}\sin\left(\omega\sqrt{1+\frac{\lambda^2}{\omega^2}}t\right)\\
-    &\approx \frac{\lambda^2}{\omega^2}\sin^2(\omega t)
+    \frac{\lambda^2}{\Delta^2}\sin(\Delta t)^2 &= \frac{\lambda^2}{\omega^2\left(1+\frac{\lambda^2}{\omega^2}\right)}\sin\left(\omega\sqrt{1+\frac{\lambda^2}{\omega^2}}t\right)
 \end{align*}
+As $\omega>>\lambda$ we have that $\frac{\lambda}{\omega}$ therefore 
+if we perform a taylor expansion of $\frac{\lambda^2}{\Delta^2}\sin(\Delta t)^2$
+around $\frac{\lambda}{\omega}=0$ we get that the $0$th order term is
+$$\frac{\lambda^2}{\omega^2}\sin^2(\omega t)$$
+Which is what we get from perturbation theory.
 
 \end{document}

@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\author{Lawrence Liu}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,stmaryrd}
+\usepackage{physics}
+\usepackage{pdfpages}
+\newcommand{\Laplace}{\mathscr{L}}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{amssymb}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}}
+\lstset{style=mystyle}
+\title{Physics 115C HW 5}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\subsection*{(a)}
+We have that 
+$$\Delta=\frac{\Omega}{2}$$
+Therefore we must have that 
+$$\frac{\lambda^2}{\Delta^2}=4\frac{\lambda^2}{\Omega^2}=\frac{\gamma^2}{\hbar^2\Omega^2}$$
+Therefore we have that 
+$$\lambda = \frac{\gamma}{2\hbar}$$
+Since 
+$$\Delta^2=\lambda^2+\omega^2$$
+We have that 
+$$\omega^2=\frac{\gamma^2}{4\hbar^2}-\frac{\Omega^2}{4}$$
+Since $\Omega^2 = \delta\omega^2+\frac{\gamma^2}{\hbar^2}$ we have:
+$$\omega^2=-\frac{\delta\omega^2}{4}$$
+Therefore we have that
+$$\omega = i\frac{\delta\omega}{2}$$
+\subsection*{(b)}
+Therefore we have that 
+$$H_0=\begin{pmatrix}
+    2\hbar i\frac{\delta\omega}{2} & 0\\
+    0 & 0
+\end{pmatrix}$$
+And 
+$$H_1=\begin{pmatrix}
+    0 & \frac{\gamma}{2}\\
+    \frac{\gamma}{2} & 0
+\end{pmatrix}$$
+Therefore we have that 
+$$H_0+H_1 = \begin{pmatrix}
+    2\hbar i\frac{\delta\omega}{2}& \frac{\gamma}{2}\\
+    \frac{\gamma}{2} & 0
+\end{pmatrix}$$
+We know that the eigenvalues in terms of $\lambda$, $\omega$ and $\Delta$
+are $\hbar(\omega\pm\Delta)$, therefore we have that the energy eigenvalues are 
+$$E_{\pm} = \hbar \left(i\frac{\delta\omega}{2}\pm \frac{\Omega}{2}\right)$$
+And we have that the eigenvectors $v_{+}= d\begin{pmatrix}
+    \omega+\Delta\\
+    \lambda
+\end{pmatrix}$ and $v_{-}= d\begin{pmatrix}
+    -\lambda\\
+    \omega+\Delta
+\end{pmatrix}$ where $d$ is a normalization constant. Therefore we have that
+$$v_{+}=d\begin{pmatrix}
+    i\frac{\delta\omega}{2}+\frac{\Omega}{2}\\
+    \frac{\gamma}{2\hbar}
+\end{pmatrix}$$
+And
+$$v_{-}=d\begin{pmatrix}
+    -\frac{\gamma}{2\hbar}\\
+    i\frac{\delta\omega}{2}+\frac{\Omega}{2}
+\end{pmatrix}$$
+We have that $d^{-2} = \Omega$.
+\subsection*{(c)}
+\includegraphics*[width=0.7\columnwidth]{fig1.png}\\
+This is a lorentzian curve.
+\section*{Problem 2}
+We have that the probability of a transition is given by
+$$P_{if}=\left|\frac{i}{\hbar}\int_{0}^{t} e|E_0|e^{-\gamma t} \bra{f}z\ket{i}dt\right|^2$$
+We have that
+$$\bra{211}z\ket{100}=0$$
+$$\bra{21-1}z\ket{210}=0$$
+From 6.3b. Also from applying what we have from 6.3e and changing 
+$L_z$ to $L_y$ and $y$ to $z$ we get:
+$$\bra{200}z\ket{100}=0$$
+And thus we just need to solve for 
+\begin{align*}
+    \bra{210}z\ket{100}&=\int_{0}^{\infty}\int_{0}^{2\pi}\int_{0}^{\pi} r^3\sin(\theta)\cos(\theta)
+    \psi_{210}^{*}(r,\theta,\phi)\psi_{210}^{*}(r,\theta,\phi)d\theta d\phi dr\\
+    &= 2\pi\int_{0}^{\infty}Y_{210} Y_{100} r^3\int_{0}^{\pi}\sin(\theta)\cos^2(\theta)dr\\
+    &= \frac{4\pi}{3}\int_{0}^{\infty}Y_{210} Y_{100} r^3dr\\
+    &= \frac{4\pi}{3}\frac{1}{4\sqrt{2\pi}}\frac{1}{\sqrt{\pi}a_0^{4}}\int_{0}^{\infty} r^4 e^{-3r/2a_0}dr\\
+    &= \frac{2^\frac{15}{2}a_0}{3^5}
+\end{align*}
+Thereforer we have that the probability of transistion is given by 
+$$P_{if}=\left|\frac{i}{\hbar}\frac{2^\frac{15}{2}a_0}{3^5} \int_{0}^{t} e|E_0|e^{-\gamma t}e^{\frac{it}{\hbar}E_f-E_i}dt\right|^2$$
+Thus the limit as $t\rightarrow\infty$ is:
+$$P_{if}=\left|\frac{i}{\hbar}\frac{2^\frac{15}{2}a_0}{3^5} \frac{e|E_0|}{-\gamma+\frac{i(E_f-E_i)}{\hbar}}\right|^2$$
+$$P_{if}=\frac{2^{15}a_0^2}{3^{10}\hbar^2} \frac{e^2|E_0|^2}{\gamma^2+\frac{(E_f-E_i)^2}{\hbar^2}}$$
+We have that $E_2-E_1 = \frac{3e^2}{8a_0}$ thus we get:
+$$P_{if}=\boxed{\frac{2^{15}a_0^2}{3^{10}\hbar^2} \frac{e^2|E_0|^2}{\gamma^2+\frac{9e^4}{64a_0^2\hbar^2}}}$$
+\section*{Problem 3}
+\subsection*{(a)}
+We have that 
+\begin{align*}
+    [L_z,x] &= [xp_y-yp_x,x]\\
+    &= [xp_y,x]-[yp_x,x]\\
+    &= x[p_y,x]+[x,p_y]x-[y,x]p_x-y[p_x,x]\\
+    &= -y[p_x,x]\\
+    &= yi\hbar
+\end{align*}
+Likewise 
+\begin{align*}
+    [L_z,y] &= [xp_y-yp_x,y]\\
+    &= [xp_y,y]-[yp_x,y]\\
+    &= x[p_y,y]+[x,p_y]y-[y,x]p_x-y[p_x,y]\\
+    &= x[p_y,y]-[y,x]p_x\\
+    &= -xi\hbar
+\end{align*}
+and 
+\begin{align*}
+    [L_z,z] &= [xp_y-yp_x,z]\\
+    &= [xp_y,z]-[yp_x,z]\\
+    &= x[p_y,z]+[x,p_y]z-[y,x]p_x-y[p_x,z]\\
+    &= x[p_y,z]-[y,x]p_x\\
+    &= 0
+\end{align*}
+\subsection*{(b)}
+We have that 
+\begin{align*}
+    \bra{n'l'm'}[L_z,z]\ket{nlm} &= \bra{n'l'm'}0\ket{nlm}\\
+    \bra{n'l'm'}L_zz-zL_z\ket{nlm} &= 0\\
+    \bra{n'l'm'}(m'-m)z\ket{nlm} &= 0\\
+    (m'-m)\bra{n'l'm'}z\ket{nlm} &= 0
+\end{align*}
+Thus we can see that unless $m'=m$ the matrix element must be zero, thus if 
+light is polarized in the $z$ direction, it cannot change the $m$ quantum number.
+Thus we cannot go from $\ket{100}\to\ket{211}$ with light polarized in the $z$ direction.
+\subsection*{(c)}
+We have that
+\begin{align*}
+    \bra{n'l'm'}[L_z,x]\ket{nlm} &= \bra{n'l'm'}i\hbar y\ket{nlm}\\
+    \bra{n'l'm'}L_zx-xL_z\ket{nlm} &= i\hbar\bra{n'l'm'}y\ket{nlm}\\
+    \hbar \bra{n'l'm'}(m'-m)x\ket{nlm} &= i\hbar\bra{n'l'm'}y\ket{nlm}\\
+    (m'-m)\bra{n'l'm'}x\ket{nlm} &= i\bra{n'l'm'}y\ket{nlm}
+\end{align*}
+\subsection*{(d)}
+We have that:
+\begin{align*}
+    [L_z,x\pm i y] &= [L_z,x]\pm i[L_z,y]\\
+    &= i\hbar y\pm \hbar x\\
+\end{align*}
+\begin{align*}
+    \bra{n'l'm'}[L_z,x\pm i y]\ket{nlm} &=  \bra{n'l'm'}i\hbar y\pm \hbar x\ket{nlm}\\
+    (m'-m)\bra{n'l'm'}x\pm iy\ket{nlm} &= \pm\bra{n'l'm'}x\pm iy\ket{nlm}\\
+    (m'-m\mp 1)\bra{n'l'm'}x\pm iy\ket{nlm} &= 0
+\end{align*}
+Thus we can see that the only possible nonzero matrix elements are when $m'=m\pm 1$. This 
+reminds us of the raising and lower operators.
+\subsection*{(e)}
+We have that 
+\begin{align*}
+    \bra{n'l'm'}[L_z,y]\ket{nlm} &= -\bra{n'l'm'}i\hbar x\ket{nlm}\\
+    (m'-m) \bra{n'l'm'}y\ket{nlm} &= -i\bra{n'l'm'}x\ket{nlm}\\
+    (m'-m)^2 \bra{n'l'm'}x\ket{nlm} &= \bra{n'l'm'}x\ket{nlm}\\
+    \left((m'-m)^2-1\right)\bra{n'l'm'}x\ket{nlm} &= 0
+\end{align*}
+Thus we can see that $\bra{n'l'm'}x\ket{nlm}= \bra{n'l'm'}y\ket{nlm} = 0$
+unless $(m'-m)^2=1$. This means that for both the $bra{n'l'm'}x\ket{nlm}$ and 
+$\bra{n'l'm'}y\ket{nlm}$ matricies will have 0 values beyond the diagonal above a
+and below the main diagonal. 
+\end{document}
