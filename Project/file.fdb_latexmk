@@ -7,8 +7,8 @@
   (generated)
   "file.bbl"
   "file.blg"
-["pdflatex"] 1685942287 "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" "file.pdf" "file" 1685942287
-  "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" 1685942283 13030 8dc156532abdf9211504f9a913ed5790 ""
+["pdflatex"] 1685945391 "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" "file.pdf" "file" 1685945391
+  "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" 1685945385 13413 d7c45ad85a4c46b9d28b9e6c3b9e7118 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1664170015 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1664168346 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1664168346 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -119,9 +119,9 @@
   "c:/texlive/2022/texmf.cnf" 1664173806 713 e69b156964470283e0530f5060668171 ""
   "cmos_inverter.png" 0 -1 0 ""
   "cmos_nor.png" 0 -1 0 ""
-  "file.aux" 1685942287 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "file.aux" 1685945391 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
   "file.bbl" 0 -1 0 "bibtex file"
-  "file.tex" 1685942283 13030 8dc156532abdf9211504f9a913ed5790 ""
+  "file.tex" 1685945385 13413 d7c45ad85a4c46b9d28b9e6c3b9e7118 ""
   "mosfet_pinch_off.png" 0 -1 0 ""
   "nmosfet.png" 0 -1 0 ""
   "pmosfet.png" 0 -1 0 ""
