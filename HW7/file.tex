@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\author{Lawrence Liu}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,stmaryrd}
+\usepackage{physics}
+\usepackage{pdfpages}
+\newcommand{\Laplace}{\mathscr{L}}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{amssymb}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}}
+\lstset{style=mystyle}
+\title{Physics 115C HW 3}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\subsection*{(a)}
+We have that:
+\begin{align*}
+    c_{f}^{(1)} &= \frac{1}{i\hbar}\int_{0}^{t} e^{i\omega_{fi}t'}\bra{f}V\ket{i}dt'\\
+    &= \frac{1}{i\hbar}\bra{f}V\ket{i}\int_{0}^{t} e^{i\omega_{fi}t'}dt'\\
+    &= \frac{1}{i\hbar}\bra{f}V\ket{i}\frac{1}{i\omega_{fi}}\left(e^{i\omega_{fi}t}-1\right)\\
+    &= -\frac{V_{fi}}{\hbar\omega_{fi}}\left(e^{i\omega_{fi}t}-1\right)\\
+    \left|c_{f}^{(1)}\right|^2 &= \frac{V_{fi}^2}{\hbar^2\omega_{fi}^2}\left(2-2\cos\left(\omega_{fi}t\right)\right)\\
+    &= \frac{|V_{fi}|^2}{\hbar^2\omega_{fi}^2}\left(4\sin^2\left(\frac{\omega_{fi}t}{2}\right)\right)\\
+\end{align*}
+\subsection*{(b)}
+Therefore we have that the probability of transition to a group of final states is given by:
+$$P(t) = \sum_{f} \frac{4|V_{fi}|^2}{\hbar^2\omega_{fi}^2}\left(\sin^2\left(\frac{\omega_{fi}t}{2}\right)\right)$$
+\subsection*{(c)}
+If we assume that the states for a continuum of final states, then we have that:
+$$P(t) = \frac{1}{\hbar^2}\int |V_{fi}|^2\left(\frac{\sin\left(\frac{(E_{f}-E_i)t}{2\hbar}\right)}{\frac{E_f-E_i}{2\hbar}}\right)^2\rho(E_f)dE_f$$
+\subsection*{(d)}
+These approximations allow us to bring $|V_{fi}|^2$ and $\rho(E_f)$ outside of the integral, and we have that:
+$$P(t) = \frac{1}{\hbar^2}|V_{fi}|^2\rho(E_f)\int \left(\frac{\sin\left(\frac{(E_{f}-E_i)t}{2\hbar}\right)}{\frac{E_f-E_i}{2\hbar}}\right)^2dE_f$$
+We can make this approximation if we take the long time limit since the peak of the sinc function will be very narrow, with the 
+width scaling with $\frac{1}{t}$, and thus when $t>>\frac{\hbar}{(E_{f}-E_i)}$ then we will have that the width $\frac{1}{t}<<\frac{E_f-E_i}{\hbar}$,
+and thus we can assume that the density of states is roughly constant over the width of the sinc function.
+\subsection*{(e)}
+$$\int \left(\frac{\sin\left(\frac{(E_{f}-E_i)t}{2\hbar}\right)}{\frac{E_f-E_i}{2\hbar}}\right)^2dE_f = 2\hbar t \int_{-\infty}^{\infty} \left(\frac{\sin(x)}{x}\right)^2dx=2\hbar t\pi$$
+Therefore we have:
+$$P(t) = \frac{2\pi}{\hbar}|V_{fi}|^2\rho(E_f)t$$
+And thus the transision rate is given by:
+$$\Gamma = \frac{2\pi}{\hbar}|V_{fi}|^2\rho(E_f)$$
+\section*{Problem 2}
+\subsection*{(a)}
+The ground state of a harmonic oscillator is given by:
+$$\psi_0(x) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}x^2}$$
+\subsection*{(b)}
+We have that since the final wavefunction is given by 
+$$\psi_f(x) = Ce^{ikx}$$
+Since the periodic boundary conditions require that $\psi_f(x) = \psi_f(x+L)$, we have that:
+$$k = \frac{2\pi n}{L}$$
+for $n = 0, \pm 1, \pm 2, ...$.
+Therefore we have 
+$$\psi_f(x) = \frac{1}{\sqrt{L}}e^{i\frac{2\pi n}{L}x}$$
+\subsection*{(c)}
+We have that from fermi's golden rule, the transition probability is given by:
+$$P_{0\rightarrow f} = \frac{2\pi}{\hbar}|V_{fi}|^2\rho(E_f)$$
+\subsection*{(d)}
+And we have that the matrix element is 
+$$\bra{f} V \ket{i} = E_0e^{-i\omega t}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\frac{1}{\sqrt{L}}\int_{-\infty}^{\infty} e^{-i\frac{2\pi n}{L}x}xe^{-\frac{m\omega}{2\hbar}x^2}dx$$
+To evaluate the integral let $\omega' = \frac{2\pi n}{L}$ then we notice that the 
+integral is effectively the fourier transform of $xe^{-\frac{m\omega}{2\hbar}x^2}$ at $\omega'$, and we have that:
+$$e^{-\frac{m\omega}{2\hbar}x^2} \to \frac{1}{\sqrt{\frac{m\omega}{\hbar}}}e^{\frac{-\omega'^2}{2\frac{m\omega}{\hbar}}}$$
+$$xe^{-\frac{m\omega}{2\hbar}x^2} \to -i\frac{1}{\sqrt{\frac{m\omega}{\hbar}}}\frac{\omega'}{\frac{m\omega}{\hbar}}e^{\frac{-\omega'^2}{2\frac{m\omega}{\hbar}}}$$
+Therefore we have that:
+$$\int_{-\infty}^{\infty} e^{-i\frac{2\pi n}{L}x}xe^{-\frac{m\omega}{2\hbar}x^2}dx = -i\sqrt{2\pi}\frac{1}{\sqrt{\frac{m\omega}{\hbar}}}\frac{2\pi n \hbar}{Lm\omega}e^{\frac{-2\hbar \pi^2 n^2}{mL\omega}}$$
+And thus we have the matrix element:
+$$\bra{f} V \ket{i} =-iE_0e^{-i\omega t} \sqrt{2\pi}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\frac{1}{\sqrt{L}}\frac{1}{\sqrt{\frac{m\omega}{\hbar}}}\frac{2\pi n \hbar}{Lm\omega}e^{\frac{-2\hbar \pi^2 n^2}{mL\omega}}$$
+\subsection*{(e)}
+We have that 
+$$E = \frac{\hbar^2k^2}{2m} = \frac{\hbar^2}{2m}\left(\frac{2\pi n}{L}\right)^2$$
+Therefore we have that:
+$$dE = \frac{\hbar^2}{m}\frac{2\pi^2 n}{L^2}dn$$
+Therefore we have that 
+$$\rho(E) = \frac{L^2}{2\pi^2 n}\frac{m}{\hbar^2}$$
+\subsection*{(f)}
+$$\Gamma = \frac{2\pi}{\hbar} \frac{L^2}{2\pi^2 n}\frac{m}{\hbar^2}\left(\sqrt{2\pi}E_0\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\frac{1}{\sqrt{L}}\frac{1}{\sqrt{\frac{m\omega}{\hbar}}}\frac{2\pi n \hbar}{Lm\omega}e^{\frac{-2\hbar \pi^2 n^2}{mL\omega}}\right)^2$$
+$$\Gamma = \frac{8\pi^2n}{m\omega^3L}\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{2}}e^{\frac{-2\hbar \pi^2 n^2}{mL\omega}}$$
+\section*{Problem 3}
+\subsection*{(a)}
+We have that applying the fermi golden rule the absorption rate is given by:
+$$\Gamma = \frac{2\pi}{\hbar}|U_{fi}|^2\rho(E_f)$$
+We also have that since we approximated the peak to be very narrow, we would get that $E_f = E_f-E_i-\hbar\omega$, and thus we have that:
+$$\Gamma = \frac{2\pi}{\hbar}|U_{fi}|^2\rho(E_i+\hbar\omega\delta)$$
+Likewise we have the emission rate is given by:
+$$\Gamma = \frac{2\pi}{\hbar}|U_{fi}|^2\rho(E_i-\hbar\omega\delta)$$
+Since we would have that the only possible emission energy is $E_f = E_i-\hbar\omega$, we notice that this satistifies
+the energy conservation law. Since the final energies is the same as the initial energy plus or minus the energy of the photon, for the 
+absorption and emission respectively.
+\subsection*{(b)}
+\includegraphics*[scale=0.1]{fig1.png}\\
+\subsection*{(c)}
+We have that the initial wavefunction would be:
+$$\psi_i(x) = \frac{1}{\sqrt{V}}$$
+And the final wavefunction would be:
+$$\psi_f(x) = \frac{1}{\sqrt{V}}e^{i\mathbf{k}\cdot\mathbf{r}}$$
+Therefore we have that the matrix element is given by:
+$$\bra{f}\frac{\hbar^2\lambda}{2m}\delta(\mathbf{r})\ket{i} = \frac{\hbar^2\lambda}{2m}\frac{1}{V}\int e^{-i\mathbf{k}\cdot\mathbf{r}}\delta(\mathbf{r})d^4r$$
+$$\bra{f}\frac{\hbar^2\lambda}{2m}\delta(\mathbf{r})\ket{i} = \frac{\hbar^2\lambda}{2m}$$
+We have that the energy of a given state is given by 
+$$E = \frac{\hbar^2}{2m} \mathbf{k}\cdot \mathbf{k}$$
+Or in terms of $\mathbf{n} = \frac{L}{2\pi} \mathbf{k}$ we have that:
+$$E = \frac{\hbar^2}{2m} \frac{4\pi^2}{L^2} \mathbf{n}\cdot \mathbf{n}$$
+We can write $\mathbf{n}\cdot \mathbf{n}$ as effectively a "radius" $r$. Therefore we have that:
+$$E = \frac{\hbar^2}{2m} \frac{4\pi^2}{L^2} r^2$$
+Thus we have that 
+$$r = \frac{L}{2\pi}\sqrt{\frac{2mE}{\hbar^2}}$$
+We also have that for a 4d hypersphere with radius r', the surface volumn is given by:
+$$V = 2\pi^2r'^3$$
+Therefore we have that the density of states is given by:
+$$\rho(E_f) = 2\pi^2 \left(\frac{L}{2\pi}\sqrt{\frac{2mE}{\hbar^2}}\right)^3$$
+Thus from fermi's golden rule we have that:
+$$\Gamma = \frac{4\pi^3}{\hbar}\left(\frac{\hbar^2\lambda}{2m}\right)^2 \left(\frac{L}{2\pi}\sqrt{\frac{2mE}{\hbar^2}}\right)^3$$
+\end{document}
