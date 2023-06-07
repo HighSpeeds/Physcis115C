@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+\author{Lawrence Liu}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,stmaryrd}
+\usepackage{physics}
+\usepackage{pdfpages}
+\newcommand{\Laplace}{\mathscr{L}}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{amssymb}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}}
+\lstset{style=mystyle}
+\title{Physics 115C HW 8}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\subsection*{(a)}
+We have that the beam splitter matrix is:
+$$
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+    1 & 1\\
+    1 & -1
+\end{bmatrix}$$
+We note that the beam splitter matrix is unitary, therefore we have that
+$$\ket{i_1} = \frac{1}{\sqrt{2}}\left(\ket{O_1}-\ket{O_2}\right)$$
+$$\ket{i_2} = \frac{1}{\sqrt{2}}\left(\ket{O_1}+\ket{O_2}\right)$$
+We also have that the state after the beamsplitter of a photon in state is 
+a superposition of the two output states ie we have that the output state is:
+$$\frac{1}{\sqrt{2}}\left(\ket{O_1}+\ket{O_2}\right)$$
+\subsection*{(b)}
+We have that 
+$$\ket{D_1} = -\frac{1}{\sqrt{2}}\left(\ket{O_1}+\ket{O_2}\right)$$
+$$\ket{D_2} = -\frac{1}{\sqrt{2}}\left(\ket{O_2}-\ket{O_1}\right)$$
+Thus we have 
+$$\ket{D_1} = -\frac{1}{2}\left(\ket{i}-\ket{i}\right)$$
+$$\ket{D_2} = -\frac{1}{2}\left(\ket{i}+\ket{i}\right)$$
+\subsection*{(c)}
+Thus we have that 
+$$|bra{i}\ket{D_1}|^2 = 0$$
+and 
+$$|bra{i}\ket{D_2}|^2 = 1$$
+Thus we can see that all the photons are detected by detector 2.
+\subsection*{(d)}
+We have in this case:
+$$\ket{D_1} = -\frac{1}{2}\left(\ket{i}+\ket{i}\right)$$
+$$\ket{D_2} = -\frac{1}{2}\left(\ket{i}-\ket{i}\right)$$
+Thus we have that
+$$|\bra{i}\ket{D_1}|^2 = 1$$
+and
+$$|\bra{i}\ket{D_2}|^2 = 0$$
+Thus we can see that all the photons are detected by detector 1.
+\section*{Problem 2}
+\subsection*{(a)}
+For each state, we can decompose $r$ into $x$, $y$, and $z$. And there 
+are 4 states we are intrested in, so we need to calculate 12 matrix elements. 
+\subsection*{(b)}
+We have that from hw 6:
+$$\bra{100}z\ket{200} =0$$
+$$\bra{100}z\ket{211} =0$$
+$$\bra{100}z\ket{21-1} =0$$
+Likewise we have that 
+$$\bra{100}x\ket{200} =0$$
+$$\bra{100}x\ket{210} = 0$$
+and 
+$$\bra{100}y\ket{200} =0$$
+$$\bra{100}y\ket{210} = 0$$
+\subsection*{(c)}
+We have that from HW 6:
+$$\bra{100}z\ket{210} = \frac{2^{\frac{15}{2}}a_0}{3^5}$$
+And:
+\begin{align*}
+    \bra{100}x\ket{21\pm1} &= \int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty} \phi_{100}^*x\phi_{21\pm1}r^2\sin(\theta)drd\theta d\phi\\
+    &= \int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty} \phi_{100}^*\phi_{21\pm1} r^3\sin^2(\theta)\cos(\phi)drd\theta d\phi\\
+    &= \frac{1}{8a_0^4\pi }\int_{0}^{2\pi}\cos(\phi)e^{\pm i\phi}\int_{0}^{\pi}\sin^3(\theta)\int_{0}^{\infty} r^4e^{-3r/(2a_0)}drd\theta d\phi\\
+    &=\frac{1}{8a_0^4\pi}\frac{256a_0^5}{81}\frac{4}{3} \pi\\
+    &= \frac{128}{243}a_0
+\end{align*}
+Likewise we have that:
+\begin{align*}
+    \bra{100}y\ket{21\pm1} &= \int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty} \phi_{100}^*y\phi_{21\pm1}r^2\sin(\theta)drd\theta d\phi\\
+    &= \int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty} \phi_{100}^*\phi_{21\pm1} r^3\sin^2(\theta)\sin(\phi)drd\theta d\phi\\
+    &= \frac{1}{8a_0^4\pi \sqrt{3}}\int_{0}^{2\pi}\sin(\phi)e^{\pm i\phi}\int_{0}^{\pi}\sin^3(\theta)\int_{0}^{\infty} r^4e^{-3r/(2a_0)}drd\theta d\phi\\
+    &=\pm\frac{1}{8a_0^4\pi \sqrt{3}}\frac{256a_0^5}{81}\frac{4}{3} i\pi
+    &= \pm\frac{i128}{243}a_0
+\end{align*}
+\subsection*{(d)}
+We have that the transistion rates are:
+$$\Gamma_{210\to 100} = \frac{e^2\omega^3}{3\pi\epsilon_0\hbar c^3}\left|\bra{100}z\ket{210}\right|^2 = 6.260\times 10^{8} s^{-1}$$
+$$\Gamma_{211\to 100} = \frac{e^2\omega^3}{3\pi\epsilon_0\hbar c^3}\left(\left|\bra{100}x\ket{211}\right|^2+\left|\bra{100}y\ket{211}\right|^2\right)= 6.260\times 10^{8} s^{-1}$$
+$$\Gamma_{21-1 \to 100} = \frac{e^2\omega^3}{3\pi\epsilon_0\hbar c^3}\left(\left|\bra{100}x\ket{21-1}\right|^2+\left|\bra{100}y\ket{21-1}\right|^2\right)= 6.260\times 10^{8} s^{-1}$$
+Therefore we get that lifetime for each are $1.597$ns. 
+Likewise since $\bra{100}x\ket{200} = \bra{100}y\ket{200} = \bra{100}z\ket{200} = 0$ we have that
+$$\Gamma_{200\to 100} = 0$$
+Therefore the lifetime for this state is infinite.
+\subsection*{(e)}
+The values we calculated for the $\ket{210}$ and $\ket{21\pm}$ state is very close to what we theoretically calculated. However the 
+the transition lifetime for the $\ket{200}$ state is not infinite, which is not what we theoretically calculated, however it is several
+orders of magnitude larger than the other states, so it is still a very long lifetime. The reason why the transistion lifetime is not infinite
+is because of intermediate states. 
+\section*{Problem 3}
+\subsection*{(a)}
+We have 
+\begin{align*}
+    H  &= \frac{P^2}{2M}+\frac{p^2}{2m}+V(x)\\
+    &= \frac{p_1^2+2p_1p_2+p_2^2}{2(m_1+m_2)}+\frac{m_2^2p_1-2m_1m_2p_1+m_1^2p_2}{2m_1m_2(m_1+m_2)}+V(x)\\
+    &= \frac{m_1m_2p_1^2+m_1m_2p_2^2}{2m_1m_2(m_1+m_2)}+\frac{m_2^2p_1+m_1^2p_2}{2m_1m_2(m_1+m_2)}+V(x)\\
+    &= \frac{m_2(m_1+m_2)p_2^2+m_1(m_1+m_2)p_1^2}{2m_1m_2(m_1+m_2)}+V(x)\\
+    &= \frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2}+V(|x_1-x_2|)
+\end{align*}
+\subsection*{(b)}
+We have that: 
+$$[X_i,P_i] = \frac{m_1[p_{1i},x_{1i}]+m_2[p_{2i},x_{2i}]}{m_1+m_2} = i\hbar$$
+and for $i\neq j$:
+$$[X_i,P_j] = \frac{m_1[p_{1i},x_{1j}]+m_2[p_{2i},x_{2j}]}{m_1+m_2} = 0$$
+Likewise:
+$$[x_i,p_i] = \frac{m_2}{m_1+m_2}[x_{1i},p_{1i}]+\frac{m_1}{m_1+m_2}[x_{2i},p_{2i}] = i\hbar$$
+and for $i\neq j$:
+$$[x_i,p_j] = \frac{m_2}{m_1+m_2}[x_{1i},p_{1j}]+\frac{m_1}{m_1+m_2}[x_{2i},p_{2j}] = 0$$
+\subsection*{(c)}
+We have that thus the Schrodinger equation is:
+$$\left(\frac{P^2}{2M}+\frac{p^2}{2m}+V(x)\right) \psi_{CM}(X)\psi_{rel}(x) = E\psi_{CM}(X)\psi_{rel}(x)$$
+\subsection*{(d)}
+Dividing by $\psi_{CM}(X)\psi_{rel}(x)$ we get:
+$$\frac{1}{\psi_{CM}(X)}\frac{P^2}{2M}\psi_{CM}(X)+\frac{1}{\psi_{rel}(x)}\frac{p^2}{2m}\psi_{rel}(x)+\frac{1}{\psi_{rel}(x)}V(x)\psi_{rel}(x) = E$$
+therefore we can see that we have a term $\frac{1}{\psi_{CM}(X)}\frac{P^2}{2M}\psi_{CM}(X)$ that only 
+depends on $X$ and a term $\frac{1}{\psi_{rel}(x)}\frac{p^2}{2m}\psi_{rel}(x)+\frac{1}{\psi_{rel}(x)}V(x)\psi_{rel}(x)$ that only depends on $x$.
+\subsection*{(e)}
+If we have: 
+$$\frac{P^2}{2M}\psi_{CM}(X) = E_{CM}\psi_{CM}(X)$$
+and 
+$$\frac{p^2}{2m}\psi_{rel}(x)+V(x)\psi_{rel}(x) = E_{rel}\psi_{rel}(x)$$
+then we have that substituting back into the equation we derived above:
+$$E_{CM}\frac{1}{\psi_{CM}(X)}\psi_{CM}(X)+E_{rel}\frac{1}{\psi_{rel}(x)}\psi_{rel}(x) = E_{CM}+E_{rel} = E$$
+\subsection*{(f)}
+By taking into account the mass of the proton and the electron we have the 
+reduced mass is:
+$$\mu = 9.104\times 10^{-28} kg$$
+The mass of the proton far outweighs the 
+mass of the electron. Therefore we can see that the relative momentum 
+is approximately the momentum of the electron. 
+\section*{Problem 4}
+\subsection*{(a)}
+We have 
+$$\frac{1}{2}\left(\ket{r_1}\ket{r_2}+ket{r_1}\ket{t_2}+\ket{t_1}\ket{r_2}+\ket{t_1}\ket{t_2}\right)$$
+\subsection*{(b)}
+Therefore the probability that Detector 1 and Detector 2 both click is $0.5$. And the probability 
+that Detector 1 clicks twice is $0.25$ and the probability that Detector 2 clicks twice is $0.25$.
+\subsection*{(c)}
+If the photons are indistringuishable then we have that the state is 
+$$\frac{1}{2}\left(-\ket{D_2}\ket{D_1}-\ket{D_2}\ket{D_2}+\ket{D_1}\ket{D_2}+\ket{D_1}\ket{D_1}\right)$$
+Then if renormalizing then we have:
+$$\frac{1}{\sqrt{2}}\left(\ket{D_1}\ket{D_1}-\ket{D_2}\ket{D_2}\right)$$
+\subsection*{(d)}
+Therefore we can see that the probability that Detector 1 and Detector 2 both click is $0$ and the 
+probability that Detector 1 clicks twice is $0.5$ and the probability that Detector 2 clicks twice is $0.5$.
+\subsection*{(e)}
+A single photon can interfere with other photon only if they are 
+indistinguishable. If they are distinguishable then they will not interfere.
+\subsection*{(f)}
+We have that $P_C=0$ thus 
+$$\alpha  = \frac{P_C}{P_{D1}P_{D2}} = 0$$
+
+\end{document}
+
+
+

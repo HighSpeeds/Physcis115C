@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1684188632 "/home/lawrence/Desktop/UCLA/Physcis115C/HW5/file.tex" "file.pdf" "file" 1684188632
-  "/home/lawrence/Desktop/UCLA/Physcis115C/HW5/file.tex" 1684188632 13085 f7d39e2e32fc852e084ab1728fe3bd76 ""
+["pdflatex"] 1686007998 "/home/lawrence/Desktop/UCLA/Physcis115C/HW8/file.tex" "file.pdf" "file" 1686007998
+  "/home/lawrence/Desktop/UCLA/Physcis115C/HW8/file.tex" 1686007998 8101 bc39e3f6002eb6028316bf2be796e554 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1650183167 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1650183167 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -36,10 +36,8 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1650183167 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1650183167 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1650183167 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1650183167 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1650183167 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1650183167 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1650183167 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1650183167 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1650183167 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1650183167 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
@@ -85,8 +83,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1667843082 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1667843073 2927660 93a61f5ad9033d43a5151947b7738394 ""
-  "file.aux" 1684188632 33 06c322e1d88c4778ac780ba5e7d05c77 "pdflatex"
-  "file.tex" 1684188632 13085 f7d39e2e32fc852e084ab1728fe3bd76 ""
+  "file.aux" 1686007998 32 f852561997c05a7d986acd1deeb530ec "pdflatex"
+  "file.tex" 1686007998 8101 bc39e3f6002eb6028316bf2be796e554 ""
   (generated)
   "file.aux"
   "file.log"
