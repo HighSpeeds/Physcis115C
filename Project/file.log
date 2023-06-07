@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.25)  4 JUN 2023 23:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.25)  7 JUN 2023 00:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,23 +651,77 @@ Underfull \hbox (badness 2158) in paragraph at lines 198--210
  []
 
 
-Package natbib Warning: Citation `bardeen_tunneling' on page 3 undefined on input line 215.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--216
+Underfull \hbox (badness 10000) in paragraph at lines 211--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--216
+Underfull \hbox (badness 10000) in paragraph at lines 211--217
 
  []
 
 [3]
+
+LaTeX Warning: Reference `fig:bardeen tunneling' on page 4 undefined on input line 219.
+
+
+LaTeX Warning: File `bardeen_tunneling.png' not found on input line 222.
+
+
+c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex:222: Package pdftex.def Error: File `bardeen_tunneling.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 ...dth=0.5\linewidth]{bardeen_tunneling.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--225
+
+ []
+
+
+LaTeX Warning: Reference `fig: bardeen tunneling' on page 4 undefined on input line 227.
+
+c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex:255: Undefined control sequence.
+l.255 ...{l\rightarrow r} = \frac{2\pi}{\hbar}\abs
+                                                  {\bra{r}H'\ket{l}}^2\rho(E)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex:255: Undefined control sequence.
+l.255 ...ghtarrow r} = \frac{2\pi}{\hbar}\abs{\bra
+                                                  {r}H'\ket{l}}^2\rho(E)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex:255: Undefined control sequence.
+<recently read> \ket 
+                     
+l.255 ...r} = \frac{2\pi}{\hbar}\abs{\bra{r}H'\ket
+                                                  {l}}^2\rho(E)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 No file file.bbl.
-
-Package natbib Warning: There were undefined citations.
-
 [4] (./file.aux)
 
 LaTeX Warning: There were undefined references.
@@ -677,18 +731,18 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 13398 strings out of 475075
- 210974 string characters out of 5783001
+ 13439 strings out of 475075
+ 212063 string characters out of 5783001
  565650 words of memory out of 5000000
- 34593 multiletter control sequences out of 15000+600000
+ 34627 multiletter control sequences out of 15000+600000
  475798 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,8n,91p,1046b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on file.pdf (4 pages, 174096 bytes).
+<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on file.pdf (4 pages, 194439 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
+ 173 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

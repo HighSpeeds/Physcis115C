@@ -207,13 +207,56 @@ a smaller threshold voltage will result in a faster switch time, or alternativel
 same switching time.\\\\
 Thus the benefits of a smaller MOSFET from a very high level are that it will allow our chips to be more computationally powerful, 
 faster, and more energy efficient per MOSFET. 
-\section*{Issues with MOSFET Scaling}
+\subsection*{Issues with MOSFET Scaling}
 Then what would stop us from making our MOSFETs smaller and smaller? Well, there will be several issues that will 
 arise as we make our MOSFETs smaller. Of course the most obvious issue is that it will be harder to manufacture smaller MOSFETs. Furthermore, 
 as we make our MOSFETs smaller, the behaviour of the MOSFET will be less dependent on the Classical Physics that the pervious 
-equations were derived from. Let us first consider the case of gate tunneling and summarize Bardeen approach as 
-described by \cite{bardeen_tunneling}.\\\\
-\subsection*{Gate Tunneling}
+equations were derived from. As an example, we will examine how scaling down the 
+MOS capacitor will cause Quantum Tunneling to become a significant factor in the behaviour of the MOSFET. We will 
+then examine how this will affect the behaviour of the MOSFET and how we can mitigate this effect.\\\\
+\section*{Bardeen Tunneling Theory}
+Let us start by briefly summarizing Bardeen Tunneling Theory. Let us consider a quantum mechanical system as depicted in 
+Figure \ref{fig:bardeen tunneling} consisting of two potential wells separated by a barrier:\\\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{bardeen_tunneling.png}
+    \caption{Potential wells and wavefunctions.}
+    \label{fig:bardeen tunneling}
+\end{figure}
+As we depicted, let us assume that both of these potential wells are symmetric around their own origins, and thus 
+the potential outside the well is the same, which we defined in figure (\ref{fig: bardeen tunneling}) to be $V_0$. 
+Then we have that the potential is given by
+\begin{equation}
+    V(x) = \begin{cases}
+        V_l(x) & x < x_1\\
+        V_r(x) & x \geq x_1
+    \end{cases}
+\end{equation}
+Where $V_l(x)$ is the potential function for the left well, and $V_r(x)$ is the potential function for the right well, and 
+$x_1$ is some arbitrary point $x_l<x_1<x_r$. We can see that we can express this as: 
+\begin{equation}
+    V(x) = V_l(x) - \Theta(x-x_1)(V_0-V_r(x))
+\end{equation}
+Where $\Theta(x)$ is the Heaviside step function. 
+Therefore we can see that we can write the hamiltonian for this system as:
+\begin{equation}
+    H = \frac{p^2}{2m} + V_l(x) - \Theta(x-x_1)(V_0-V_r(x))
+\end{equation}
+We can see that if we define $H_l$ as the hamiltonian of a system consisting solely of the left well, and $H' = 
+\theta(x-x_1)(V_0-V_r(x))$, then we can write the hamiltonian as:
+\begin{equation}
+    H = H_l + H'
+\end{equation}
+Therefore we can see the that the tunneling rate can be modeled by with Fermi's Golden Rule, with $H'$ as the perturbation that 
+turns on at $t=0$. If we 
+make the key assumption that the energy of the left well is approximately equal to the energy of the right well, ie 
+$E_l \approx E_r =E$. We have that the transition rate is given by:
+\begin{equation}
+    \Gamma_{l\rightarrow r} = \frac{2\pi}{\hbar}\abs{\bra{r}H'\ket{l}}^2\rho(E)
+\end{equation}
+
+
+
 
 
 \bibliographystyle{abbrv}%Used BibTeX style is unsrt
