@@ -28,7 +28,7 @@
 
 %Import packages similar to importing libraries in python.
 \usepackage{float}
-
+\usepackage{physics}
 
 \usepackage{graphicx} %Include figure files
 \graphicspath{ {figures/} } % Figure file location
@@ -186,27 +186,29 @@ MOSFET. We have that:
 \section*{MOSFET Sizing}
 Now armed with the knowledge of how MOSFETs work, let us examine how the size of a MOSFET can affect its performance, and why 
 it is beneficial to have a smaller MOSFET. The most intuitive reason is that a smaller MOSFET will alow us to fit more MOSFETs
-on a single chip. However, there are other reasons as well.\\\\
+on a single chip, which allows for more digital circuits to be implemented on 
+one chip, and thus driving down the cost per circuit.\\\\
+Furthermore, by modifying other parameters of the MOSFET size, we
+can also increase the speed and power efficiency of the MOSFET. 
 Let us consider the capacitance of the Oxide layer of a MOSFET. We have that if the Oxide has a thickness of $t_{ox}$, 
 an area of $A$, and a dielectric constant of $\epsilon_{ox}$, then the capacitance of the oxide layer is given by
 \begin{equation}
   C_{ox} = \frac{\epsilon_{ox}A}{t_{ox}}
 \end{equation}
-Now if we scale the entire MOSFET by a factor of $\alpha$, then we have that the capacitance of the oxide layer is given by
+Now if we consider a MOSFET with a thinner oxide layer $\alpha t_{ox}$ we 
+have that the capacitance of the oxide layer is given by
 \begin{equation}
-  C_{ox} = \frac{\epsilon_{ox}\alpha^{2}A}{\alpha t_{ox}} = \frac{\alpha \epsilon_{ox}A}{t_{ox}}
+  C_{ox} = \frac{\epsilon_{ox}A}{\alpha t_{ox}}
 \end{equation}
-Therefore we can see that the capacitance of the oxide layer is inversely proportional to the size of the MOSFET. Now if we return to 
+Therefore we can see that the capacitance of the oxide layer is inversely proportional to the thickness of the oxide layer. Now if we return to 
 equations (\ref{eq:threshold_nMOSFET}) and (\ref{eq:threshold_pMOSFET}), we can see that the threshold voltage is varies inversely proportional to the capacitance of the oxide layer. 
-Thus a smaller MOSFET will have a lower threshold voltage. This is important because a lower threshold voltage means that the MOSFET will require less voltage, and therefore 
+Thus a thinner oxide layer will have a lower threshold voltage. This is important because a lower threshold voltage means that the MOSFET will require less voltage, and therefore 
 at a same current, will dissipate less power.\\\\
 This will also affect the speed of the MOSFET by increasing the on current. We have that the on current given by 
 equation (\ref{eq:mosfet saturation current}) is proportional to $(V_{GS}-V_{T})^{2}$. Therefore a lower threshold voltage will result in 
 a higher on current. Now if we recall that the switch time of a MOSFET is proportional to $\frac{1}{I_{on}}$. Therefore 
 a smaller threshold voltage will result in a faster switch time, or alternatively a lower power dissipation for the 
 same switching time.\\\\
-Thus the benefits of a smaller MOSFET from a very high level are that it will allow our chips to be more computationally powerful, 
-faster, and more energy efficient per MOSFET. 
 \subsection*{Issues with MOSFET Scaling}
 Then what would stop us from making our MOSFETs smaller and smaller? Well, there will be several issues that will 
 arise as we make our MOSFETs smaller. Of course the most obvious issue is that it will be harder to manufacture smaller MOSFETs. Furthermore, 
@@ -254,6 +256,20 @@ $E_l \approx E_r =E$. We have that the transition rate is given by:
 \begin{equation}
     \Gamma_{l\rightarrow r} = \frac{2\pi}{\hbar}\abs{\bra{r}H'\ket{l}}^2\rho(E)
 \end{equation}
+We have that the matrix element is given by:
+\begin{equation}
+    \bra{r}H'\ket{l} = \int_{-\infty}^{\infty}\psi_r^*(x)H'\psi_l(x)dx
+\end{equation}
+After doing some simplifications derived in the appendix, and with the assumption that $E_l \approx E_r =E$ we have that the matrix element is given by:
+\begin{equation}
+    \bra{r}H'\ket{l} = \frac{\hbar^2}{2m}\left(
+        \psi_r^*\frac{d}{dx}\psi_l - \psi_l\frac{d}{dx}\psi_r^*
+    \right)\Bigg|_{x=x_1}
+\end{equation}
+Which is the important result of Bardeen Tunneling Theory. 
+\subsection*{Application to MOSFETs}
+Now let us use it to try to approximate the gate source tunneling current 
+of a MOSFET.
 
 
 
