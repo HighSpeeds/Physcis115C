@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{Clerc}
+R.~Clerc, A.~Spinelli, G.~Ghibaudo, and G.~Pananakakis.
+\newblock {Theory of direct tunneling current in metal-oxide-semiconductor
+  structures}.
+\newblock {\em Journal of Applied Physics}, 91(3):1400--1409, 02 2002.
+
+\bibitem{ChenmingHu5}
+C.~Hu.
+\newblock {\em Chapter 5: MOS Capacitor}.
+\newblock Prentice Hall, 2010.
+
+\bibitem{ChenmingHu6}
+C.~Hu.
+\newblock {\em Chapter 6: MOS Transistor}.
+\newblock Prentice Hall, 2010.
+
+\bibitem{ChenmingHu7}
+C.~Hu.
+\newblock {\em Chapter 7: MOSFETs in ICs—Scaling, Leakage, and Other Topics}.
+\newblock Prentice Hall, 2010.
+
+\bibitem{BardeenTunneling}
+H.~J. Reittu.
+\newblock {Fermi's golden rule and Bardeen's tunneling theory}.
+\newblock {\em American Journal of Physics}, 63(10):940--944, 10 1995.
+
+\bibitem{Wan}
+L.~Wang.
+\newblock {\em Quantum Mechanical Effects on Mosfet Scaling Limit}.
+\newblock PhD thesis, Georgia Institute of Technology, 2006.
+
+\bibitem{Yeo}
+Y.-C. Yeo, T.-J. King, and C.~Hu.
+\newblock Mosfet gate leakage modeling and selection guide for alternative gate
+  dielectrics based on leakage considerations.
+\newblock {\em IEEE Transactions on Electron Devices}, 50(4):1027--1035, 2003.
+
+\end{thebibliography}
