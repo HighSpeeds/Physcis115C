@@ -88,8 +88,7 @@ at the heart of modern microprocessors. Let us start
 by briefly discussing the basic operation of a MOSFETs and a common application of MOSFETs in Complemetary Metal Oxide Semiconductor (CMOS) logic gates.
 \subsection{\label{sec:level2}Basic MOSFET Structure}
 The MOSFET is based around a Metal Oxide Semiconductor (MOS) capacitor. Historically this 
-was a gate made out of a metal plate on top of a semiconductor substrate, which was separated by an insulating layer of oxide, however modern 
-MOSFETs use a polysilicon gate instead of a metal gate.\\\\
+was a gate made out of a metal plate on top of a semiconductor substrate, which was separated by an insulating layer of oxide, traditionally silicon dioxide $SO_{2}$.\\\\
 Now to make a MOSFET we add a source and drain silicon regions to the silicon substrate. The source and drain regions are doped with impurities to
 be the opposite type to that of the base silicon substrate. For example, if the base silicon substrate is p-type, then the source and drain regions
 are n-type, and vice versa. We call the MOSFET with n-type source and drain regions an nMOSFET, and the MOSFET with p-type source and drain regions. We have 
@@ -141,8 +140,8 @@ Fermi level than the valence band, then the inversion layer will form. This thre
 \end{equation}
 Where $V_{FB}$ is the flatband voltage, ie the difference in the work functions of the gate and the substrate, $\phi_{B}$ is the 
 difference between the Fermi level and the intrinsic Fermi level divided by the electron charge, $Q_{SS}=\sqrt{2\epsilon_{s}qN_{a}(2\phi_{B})}$ where 
-$N_a$ is the doping concentration of the substrate, and $C_{OX}$ is the capacitance of the oxide layer.\\\\
-We can see that the opposite happens for a pMOSFET. If we apply a negative voltage to the gate, then since the electrons are pushed 
+$N_a$ is the doping concentration of the substrate, and $C_{OX}$ is the capacitance of the oxide layer per unit area.\\\\
+We can see that the opposite happens for a pMOSFET. If we apply a negative $V_{GS}$, then since the electrons are pushed 
 away and the holes are drawn to the gate, then an inversion layer of p-type Silicon will form at the surface of the substrate. Or 
 from a bands perspective, the bands will be "bended" upwards to the degree that the valence band is closer to the Fermi level than the
 conduction band. We have that this threshold is given by \cite{ChenmingHu5}
@@ -185,15 +184,16 @@ By connecting a pMOSFET and a nMOSFET in series, we can create a CMOS inverter. 
     \label{fig:cmos inverter}
 \end{figure}
 To understand this circuit let us consider two cases when the input is "low" and when the input is "high". Let us assume that 
-we have biased the circuit such that the threshold voltage of the nMOSFET is equal to the threshold voltage of the pMOSFET. Then in the 
+that the threshold voltage of the nMOSFET is equal to the threshold voltage of the pMOSFET, then in the 
 case where the input is low, then the nMOSFET will be effectively an open circuit, and the pMOSFET will be effectively a closed circuit. Therefore the output will be high. 
 Conversely, if the input is high, then the nMOSFET will be effectively a closed circuit, and the pMOSFET will be effectively an open circuit. 
 Therefore the output will be low. Thus we can see that this circuit acts as an inverter. Likewise we can create more 
 complex cirucits to implement logic gates such as a NAND or NOR gate using CMOS, which are discussed in Appendix A.
 \subsection{\label{sec:leve2}Speed}
 We should note that a MOSFET is not an instantaneous switch, we can create an basic approximation by 
-considering the MOSFET as a RC circuit. The capacitance comes from various wires connecting the MOSFET, and the capacitance that is formed in the 
-PN junction between the source and drain and the substrate. We can add this capacitance to the MOSFET model as depicted in figure (\ref{fig:cmos_train}) for a 
+considering the MOSFET as a RC circuit. The capacitance comes from the gate capacitance of the next inverter
+along with the parasitic capacitance coming from the various wires connecting the MOSFETs, and the capacitance that is formed in the 
+PN junction between the source and drain and the substrate in the driving MOSFETs. We can add this capacitance to the MOSFET model as depicted in figure (\ref{fig:cmos_train}) for a 
 CMOS inverter train.\\\\
 \begin{figure}[H]
     \centering
@@ -206,25 +206,20 @@ the switching delay is proportional to the RC time constant of the MOSFET. We ha
 \begin{equation}
   \tau \propto \frac{C}{I_{on}}V_{DD}
 \end{equation}
-\section{\label{sec:level1}MOSFET Sizing}
-Now armed with the knowledge of how MOSFETs work, let us examine how the size of a MOSFET can affect its performance, and why 
-it is beneficial to have a smaller MOSFET. The most intuitive reason is that a smaller MOSFET will alow us to fit more MOSFETs
-on a single chip, which allows for more digital circuits to be implemented on 
-one chip, and thus driving down the cost per circuit.\\\\
-Furthermore, by modifying other parameters of the MOSFET size, we
-can also increase the speed and power efficiency of the MOSFET. 
-Let us consider the capacitance of the Oxide layer of a MOSFET. We have that if the Oxide has a thickness of $t_{ox}$, 
-an area of $A$, and a dielectric constant of $\epsilon_{ox}$, then the capacitance of the oxide layer is given by
+\section{\label{sec:level1} Benefits of Shrinking Gate Oxide Layer}
+Now armed with the knowledge of how MOSFETs work, let us examine how a thinner 
+gate oxide layer impacts the performance of a MOSFET. We have that the capacitance per unit area of the oxide layer is given by
 \begin{equation}
-  C_{ox} = \frac{\epsilon_{ox}A}{t_{ox}}
+  C_{ox} = \frac{\epsilon_{ox}}{t_{ox}}
 \end{equation}
+Where $t_{ox}$ is the thickness of the oxide layer and the permittivity of the oxide is $\epsilon_{ox}$.
 Now if we consider a MOSFET with a thinner oxide layer $\alpha t_{ox}$ we 
 have that the capacitance of the oxide layer is given by
 \begin{equation}
-  C_{ox} = \frac{\epsilon_{ox}A}{\alpha t_{ox}}
+  C_{ox} = \frac{\epsilon_{ox}}{\alpha t_{ox}}
 \end{equation}
-Therefore we can see that the capacitance of the oxide layer is inversely proportional to the thickness of the oxide layer. Now if we return to 
-equations (\ref{eq:threshold_nMOSFET}) and (\ref{eq:threshold_pMOSFET}), we can see that the threshold voltage is varies inversely proportional to the capacitance of the oxide layer. 
+Therefore we can see that the unit capacitance of the oxide layer is inversely proportional to the thickness of the oxide layer. Now if we return to 
+equations (\ref{eq:threshold_nMOSFET}) and (\ref{eq:threshold_pMOSFET}), we can see that the threshold voltage is varies inversely proportional to the unit capacitance of the oxide layer. 
 Thus a thinner oxide layer will have a lower threshold voltage. This is important because a lower threshold voltage means that the MOSFET will require less voltage, and therefore 
 at a same current, will dissipate less power.\cite{ChenmingHu6}\\\\
 This will also affect the speed of the MOSFET by increasing the on current. We have that the on current given by 
@@ -233,20 +228,20 @@ a higher on current. Now if we recall that the switch time of a MOSFET is propor
 a smaller threshold voltage will result in a faster switch time, or alternatively a lower power dissipation for the 
 same switching time.\cite{ChenmingHu6}\\\\
 \subsection{\label{sec:level2}Issues with MOSFET Scaling}
-Then what would stop us from making our MOSFETs smaller and smaller? Well, there will be several issues that will 
-arise as we make our MOSFETs smaller. Of course the most obvious issue is that it will be harder to manufacture smaller MOSFETs. Furthermore, 
-as we make our MOSFETs smaller, the behaviour of the MOSFET will be less dependent on the Classical Physics that the pervious 
-equations were derived from. As an example, we will examine how scaling down the 
-MOS capacitor will cause Quantum Tunneling to become a significant factor in the behaviour of the MOSFET. We will 
-then examine how this will affect the behaviour of the MOSFET and how we can mitigate this effect.\\\\
+A question that naturally arises is what would stop us from making our Gate Oxide Layer thinner and thinner? Well, there will be several issues that will 
+arise as we make our MOSFETs smaller. The most obvious issue is that it will be harder to manufacture thinner 
+and thinner gate oxide layers. Moreover, there are also physical limitations that will arise as we make our MOSFETs smaller. With large size 
+MOSFETs, we can treat the MOS capacitor as a classical capacitor, however, as we make our MOSFETs smaller, we will have to consider quantum mechanical effects. In particular, we will have to consider Quantum Tunneling. 
+The next section will explain how Quantum Tunneling will affect the behavior of the MOSFET, and discuss 
+how we can mitigate this effect.
 \section{\label{sec:level1}Bardeen Tunneling Theory}
 Let us start by briefly summarizing Bardeen Tunneling Theory. Let us consider a quantum mechanical system as depicted in 
-Figure \ref{fig:bardeen tunneling} consisting of two potential wells separated by a barrier:\\\\
+figure (\ref{fig: bardeen tunneling}) consisting of two potential wells separated by a barrier:\\\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{bardeen_tunneling.png}
     \caption{Potential wells and wavefunctions.}
-    \label{fig:bardeen tunneling}
+    \label{fig: bardeen tunneling}
 \end{figure}
 As we depicted, let us assume that both of these potential wells are symmetric around their own origins, and thus 
 the potential outside the well is the same, which we defined in figure (\ref{fig: bardeen tunneling}) to be $V_0$. 
@@ -369,9 +364,9 @@ such as trap-assisted tunneling. This is show in the figure (\ref{fig: gate sour
 for high thicknesses of HfO$_2$, the gate current density no longer begins to behave according the direct tunneling models.\cite{Yeo}
 
 \section{\label{sec:level1}Conclusion}
-In this paper we have discussed the physics of MOSFETs, and how they are used in modern day electronics. We then demonstrated 
-why it is important to scale down size of a MOSFET, specifically the gate oxide thickness, and how that would result in 
-performance imporvements. We then discussed the physics of gate source tunneling, derived the Bardeen Tunneling Theory, and a 
+In this paper we have discussed the physics of MOSFETs, and how they are used in modern day electronics. We then 
+discussed the performance benefits of a thinner oxide layer, as well as the drawbacks of a thinner oxide layer, namely gate source tunneling.
+We then discussed the physics of gate source tunneling, derived the Bardeen Tunneling Theory, and a 
 model for the gate source tunneling current based on the Bardeen Tunneling Theory. Finally we discussed the consequences of this 
 tunneling current, and how to mitigate it.
 

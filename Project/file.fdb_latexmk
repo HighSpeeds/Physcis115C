@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex file"] 1686350252 "file.aux" "file.bbl" "file" 1686352291
+["bibtex file"] 1686356933 "file.aux" "file.bbl" "file" 1686356936
   "c:/texlive/2022/texmf-dist/bibtex/bst/base/abbrv.bst" 1664168798 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "file.aux" 1686352290 14079 b1b22e9cdfae2888ff142f5f4d15a661 "pdflatex"
+  "file.aux" 1686356936 14396 1babe3199f39d10cefb1c7b14a43aece "pdflatex"
   "fileNotes.bib" 0 -1 0 "pdflatex"
   "references.bib" 1686349194 2289 132cab000d17b3c971f34a509afb0c9d ""
   (generated)
   "file.bbl"
   "file.blg"
-["pdflatex"] 1686352288 "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" "file.pdf" "file" 1686352291
+["pdflatex"] 1686356934 "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" "file.pdf" "file" 1686356936
   "Gate Current Density vs Oxide Thickness.png.png" 1686332899 108025 a605dbb776b1df99ca45f7195faf22f8 ""
   "bardeen_tunneling.png" 1686343727 71680 a95bd97d484cde3ee2e60f8c18062997 ""
-  "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" 1686352287 26624 d699d1518f3151d15c3fcd30cb2fa6c0 ""
+  "c:/Users/Lawrence/Desktop/UCLA/Physics115C/Project/file.tex" 1686356930 26335 8e230ae608c68cf81fd65224f8ea3590 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1664170015 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1664168346 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1664168346 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -35,7 +35,6 @@
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1664169087 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1664169087 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti9.tfm" 1664169087 1476 cccc6cc4935c18ec3d5623b77ecb8b74 ""
-  "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1664168346 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1664168346 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1664168346 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1664168346 36554 b67dc2cfa451409e100b3fcf5f506509 ""
@@ -131,9 +130,9 @@
   "cmos_inverter.png" 1686297075 6137 112630202af5247c5e6077d4ab37eca6 ""
   "cmos_inverter_train.png" 1686331936 18150 8e3c7a3014b097ef3eca1b1e4b2bd9a6 ""
   "cmos_nand_gate.png" 1686349547 24243 9a1f765278eb101b050ccb04d02628db ""
-  "file.aux" 1686352290 14079 b1b22e9cdfae2888ff142f5f4d15a661 "pdflatex"
-  "file.bbl" 1686350253 1217 94353d15b1fed12d0eb49477fdd33263 "bibtex file"
-  "file.tex" 1686352287 26624 d699d1518f3151d15c3fcd30cb2fa6c0 ""
+  "file.aux" 1686356936 14396 1babe3199f39d10cefb1c7b14a43aece "pdflatex"
+  "file.bbl" 1686356934 1217 94353d15b1fed12d0eb49477fdd33263 "bibtex file"
+  "file.tex" 1686356930 26335 8e230ae608c68cf81fd65224f8ea3590 ""
   "gate_potential_WKB.png" 1686334238 277356 2ffef5e7ec5af64b71b320808ebae803 ""
   "mosfet_pinch_off.png" 1686295529 23398 3d2e317fe73a4697e09b41913e3cccc3 ""
   "nmosfet.png" 1686340799 28198 4b8caeaa0ee2ec2962544ef031c56ceb ""
